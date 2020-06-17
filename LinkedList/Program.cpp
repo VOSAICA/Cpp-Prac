@@ -24,6 +24,32 @@ node* create(int array[], int length)
     return head;
 }
 
+void insert(node* head, int pos, int x)
+{
+    node* cur = head;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        cur = cur->next;
+    }
+    node* insertNode = new node;
+    insertNode->data = x;
+    insertNode->next = cur->next;
+    cur->next = insertNode;
+}
+
+void delPos(node* head, int pos)
+{
+    node* cur = head;
+    node* del;
+    for(int i = 0; i < pos - 1; i++)
+    {
+        cur = cur->next;
+    }
+    del = cur->next;
+    cur->next = cur->next->next;
+    delete(del);
+}
+
 int main()
 {
     int array[10];
@@ -32,14 +58,24 @@ int main()
         array[i] = i;
     }
     int length = sizeof(array) / sizeof(int);
-    node* point = create(array, 10);
-    point = point->next;
+    node* head = create(array, 10);
+
+    node* point = head->next;
     while(point != NULL)
     {
-        cout << point->data <<" "<< point << endl;
+        cout << point->data << " ";
         point = point->next;
     }
+    cout << "\n\n";
 
+    insert(head, 4, 676);
+    delPos(head, 7);
 
+    point = head->next;
+    while(point != NULL)
+    {
+        cout << point->data << " ";
+        point = point->next;
+    }
     return 0;
 }
