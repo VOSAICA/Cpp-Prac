@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 struct node{
@@ -75,13 +76,59 @@ void postorder(node* root)
     cout << root->data << endl;
 }
 
+
+void layerorder(node* root)
+{
+    queue<node*> q;
+    q.push(root);
+    while(!q.empty())
+    {
+        node* now = q.front();
+        cout << now->data << endl;
+        if (now->lchild != NULL)
+        {
+            q.push(now->lchild);
+        }
+        if (now->rchild != NULL)
+        {
+            q.push(now->rchild);
+        }
+        q.pop();
+    }
+}
+
+node* recreate(int preL, int preR, int inL, int inR, int pre[], int in[])
+{
+    if(preL > preR) return NULL;
+    node* root = new node;
+    root->data = pre[preL];
+    int k;
+    for(k = inL; k <= inR; k++)
+    {
+        if(in[k] == pre[preL]) break;
+    }
+    int numLeft = k - inL;
+
+    root->lchild = recreate(preL + 1, preL + numLeft, inL, k - 1, pre, in);
+    root->rchild = recreate(preL + numLeft + 1, preR, k + 1, inR, pre, in);
+    return root;
+}
+
 int main()
 {
-    int array[5] = {3, 4, 5, 1, 2};
-    node* head = create(array, 5);
+    int array[8] = {3, 4, 5, 1, 2, 7, 9, 0};
+    node* head = create(array, 8);
 
     preorder(head);
+    cout << endl;
+    inorder(head);
+    cout << endl;
+    postorder(head);
+    cout << endl;
 
-
+    int pre[8] = {3, 4, 1, 2, 5, 7, 0, 9};
+    int in[8] = {1, 4, 2, 3, 0, 7, 5, 9};
+    node* head2 = recreate(0, 7, 0, 7, pre, in);
+    layerorder(head2);
     return 0;
 }
