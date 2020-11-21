@@ -1,6 +1,6 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main()
     cin >> N;
     vector<long long> A(N);
     int c = 0;
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         cin >> A[i];
         c = max(0ll, c + A[i] - 1);
@@ -24,7 +24,7 @@ int main()
     int i = 0;
     while (true)
     {
-        if(c == 0)
+        if (c == 0)
         {
             rotate(A.begin(), A.begin() + i, A.begin() + N);
             break;
@@ -34,12 +34,12 @@ int main()
     }
 
     long long result = 0;
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         result += sumn2(c + A[i] - 1) - sumn2(c - 1);
         c = max(0ll, c + A[i] - 1);
     }
     cout << result;
-    
+
     return 0;
 }

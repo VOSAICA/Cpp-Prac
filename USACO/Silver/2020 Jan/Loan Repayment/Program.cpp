@@ -1,8 +1,7 @@
-#include<iostream>
-#include<algorithm>
-#include<fstream>
+#include <iostream>
+#include <algorithm>
+#include <fstream>
 using namespace std;
-
 
 long long N, K, M;
 

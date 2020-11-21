@@ -1,5 +1,5 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 using namespace std;
 
 int main()
@@ -10,19 +10,19 @@ int main()
     fin.open("sort.in");
     fin >> N;
 
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         fin >> a[i];
     }
 
     bool sorted = false;
-    while(sorted == false)
+    while (sorted == false)
     {
         sorted = true;
         count++;
-        for(int i = 0; i <= N - 2; i++)
+        for (int i = 0; i <= N - 2; i++)
         {
-            if(a[i + 1] < a[i])
+            if (a[i + 1] < a[i])
             {
                 swap(a[i], a[i + 1]);
                 sorted = false;

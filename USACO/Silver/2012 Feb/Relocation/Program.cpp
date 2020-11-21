@@ -26,9 +26,9 @@ void Dijkstra(int u)
     for (int t = 0; t < N; t++)
     {
         int minn = Inf, temp;
-        for(int i = 1; i <= N; i++)
+        for (int i = 1; i <= N; i++)
         {
-            if(!vis[i] && dis[i] < minn)
+            if (!vis[i] && dis[i] < minn)
             {
                 minn = dis[i];
                 temp = i;
@@ -38,7 +38,7 @@ void Dijkstra(int u)
 
         for (int i = 1; i <= N; i++)
         {
-            if(towns[temp][i] + dis[temp] < dis[i])
+            if (towns[temp][i] + dis[temp] < dis[i])
             {
                 dis[i] = towns[temp][i] + dis[temp];
             }

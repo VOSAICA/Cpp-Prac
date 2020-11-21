@@ -1,17 +1,17 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 struct node
-{    
-    float w;    
-    float v;    
+{
+    float w;
+    float v;
     float r;
-}nodes[1000];
+} nodes[1000];
 
 int c, n;
 
-bool compare(node a,node b)
+bool compare(node a, node b)
 {
     return a.r > b.r;
 }
@@ -20,7 +20,7 @@ int main()
 {
     cin >> c;
     cin >> n;
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> nodes[i].v;
         cin >> nodes[i].w;
@@ -31,9 +31,9 @@ int main()
 
     float value = 0;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(c > nodes[i].w)
+        if (c > nodes[i].w)
         {
             value += nodes[i].v;
             c -= nodes[i].w;

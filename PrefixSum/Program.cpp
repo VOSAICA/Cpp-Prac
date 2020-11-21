@@ -1,5 +1,5 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -11,7 +11,7 @@ int main()
     int last[7];
     fill(first, first + 7, 10000);
     fill(last, last + 7, 0);
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         int a;
         int remain;
@@ -22,7 +22,7 @@ int main()
         last[remain] = i;
     }
 
-    for(int i = 0; i < 7; i++)
+    for (int i = 0; i < 7; i++)
     {
         //cout << first[i] << " " << last[i];
         ans = max(ans, last[i] - first[i]);

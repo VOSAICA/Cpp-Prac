@@ -1,20 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void print(int a[], int l)
 {
-    for(int i = 0;i < l;i++)
+    for (int i = 0; i < l; i++)
     {
-        cout<<a[i]<<" ";
+        cout << a[i] << " ";
     }
 }
 
 void Merge(int a[], int b[], int i, int m, int n)
 {
-    int j,k;
-    for(k = i, j = m + 1;i <= m, j <= n;k++)
+    int j, k;
+    for (k = i, j = m + 1; i <= m, j <= n; k++)
     {
-        if(a[j] < a[i])
+        if (a[j] < a[i])
         {
             b[k] = a[j++];
         }
@@ -22,11 +22,11 @@ void Merge(int a[], int b[], int i, int m, int n)
         {
             b[k] = a[i++];
         }
-        while(i <= m)
+        while (i <= m)
         {
             b[k++] = a[i++];
         }
-        while(j <= n)
+        while (j <= n)
         {
             b[k++] = a[j++];
         }
@@ -36,14 +36,14 @@ void Merge(int a[], int b[], int i, int m, int n)
 void MergeSort(int a[], int b[], int length)
 {
     int len = 1;
-    while(len < length)
+    while (len < length)
     {
         int s = len;
         len = 2 * s;
         int i = 0;
-        while(i + len < length)
+        while (i + len < length)
         {
-            Merge(a, b, i, i + );
+            Merge(a, b, i, i +);
             i = i + len;
         }
     }

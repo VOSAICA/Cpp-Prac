@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int N, Q, hay[100000];
@@ -27,8 +27,10 @@ int main()
     for (int i = 0; i < Q; i++)
     {
         fin >> a >> b;
-        if (i != Q - 1) fout << ans(a, b) << endl;
-        else    fout << ans(a, b);
+        if (i != Q - 1)
+            fout << ans(a, b) << endl;
+        else
+            fout << ans(a, b);
     }
 
     fout.close();

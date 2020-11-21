@@ -3,9 +3,9 @@ using namespace std;
 
 void print(int a[], int l)
 {
-    for(int i = 0;i < l;i++)
+    for (int i = 0; i < l; i++)
     {
-        cout<<a[i]<<" ";
+        cout << a[i] << " ";
     }
 }
 
@@ -19,19 +19,20 @@ void swap(int a, int b)
 int partition(int a[], int low, int high)
 {
     int pivot = a[low];
-    while(low < high)
+    while (low < high)
     {
-        while(low < high && a[high] > pivot) --high;
-        while(low < high && a[low] < pivot) ++low;
+        while (low < high && a[high] > pivot)
+            --high;
+        while (low < high && a[low] < pivot)
+            ++low;
         swap(a[low], a[high]);
-
     }
     return low;
 }
 
 void quickSort(int a[], int low, int high)
 {
-    if(low < high)
+    if (low < high)
     {
         int pivotLocation = partition(a, low, high);
         quickSort(a, low, pivotLocation - 1);

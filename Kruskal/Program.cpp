@@ -1,19 +1,20 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int N, M;
 int parent[51];
 
-struct edge{
+struct edge
+{
     int u;
     int v;
     int w;
-}edges[51];
+} edges[51];
 
 void UFset()
 {
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         parent[i] = -1;
     }
@@ -26,9 +27,9 @@ bool compare(edge a, edge b)
 int find(int x)
 {
     int s;
-    for(s = x; parent[s] >= 0; s = parent[s])
+    for (s = x; parent[s] >= 0; s = parent[s])
         ;
-    while(s != x)
+    while (s != x)
     {
         int tmp;
         tmp = parent[x];
@@ -52,7 +53,7 @@ void Union(int R1, int R2)
     {
         parent[r2] = r1;
         parent[r1] = tmp;
-    }    
+    }
 }
 
 void Kruskal()
@@ -62,12 +63,12 @@ void Kruskal()
     int u, v, w;
     UFset();
     cout << "y";
-    for(int i = 0; i < M; i++)
+    for (int i = 0; i < M; i++)
     {
         u = edges[i].u;
         v = edges[i].v;
         w = edges[i].w;
-        cout << find(u) <<" "<< find(v) << endl;
+        cout << find(u) << " " << find(v) << endl;
         if (find(u) != find(v))
         {
             cout << u << " " << v << " " << w << endl;
@@ -75,7 +76,8 @@ void Kruskal()
             Union(u, v);
             edgeNum++;
         }
-        if(edgeNum >= N - 1) break;
+        if (edgeNum >= N - 1)
+            break;
     }
     cout << "SumWeight: " << sumWeight << endl;
 }
@@ -83,7 +85,7 @@ void Kruskal()
 int main()
 {
     cin >> N >> M;
-    for(int i = 0; i < M; i++)
+    for (int i = 0; i < M; i++)
     {
         cin >> edges[i].u >> edges[i].v >> edges[i].w;
     }

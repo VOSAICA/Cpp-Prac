@@ -1,5 +1,5 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 #include <cstring>
 using namespace std;
 
@@ -15,22 +15,23 @@ void Dfs(int si, int sj)
 	int xi, xj;
 	int temp = grid[si][sj];
 	been[si][sj] = 1;
-	if(si < 0 || si > N - 1 || sj < 0 || sj > 9) return;
-	for(int i = 0; i < 4; i++)
+	if (si < 0 || si > N - 1 || sj < 0 || sj > 9)
+		return;
+	for (int i = 0; i < 4; i++)
 	{
 		xi = si + dir[i][0];
 		xj = sj + dir[i][1];
-		if(grid[xi][xj] == temp && been[xi][xj] == 0)
+		if (grid[xi][xj] == temp && been[xi][xj] == 0)
 		{
 			enough++;
 			Dfs(xi, xj);
 		}
 	}
-	if(enough >= K) grid[si][sj] = 0;
-	else grid[si][sj] = temp;
+	if (enough >= K)
+		grid[si][sj] = 0;
+	else
+		grid[si][sj] = temp;
 }
-
-
 
 int main()
 {
@@ -46,11 +47,8 @@ int main()
 		}
 	}
 
-
 	//enough = 1;
 	//Dfs(5, 0);
-
-
 
 	for (int i = 0; i < N; i++)
 	{

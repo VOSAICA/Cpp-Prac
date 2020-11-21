@@ -1,4 +1,4 @@
-﻿#include<iostream>
+﻿#include <iostream>
 using namespace std;
 
 void Print(int a[], int l)
@@ -27,7 +27,7 @@ void BubbleSort(int a[], int l)
 			}
 		}
 		newl--;
-		if(change == false)
+		if (change == false)
 		{
 			break;
 		}

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int N, T;
@@ -6,7 +6,7 @@ vector<int> cows;
 
 bool check(int stageSize)
 {
-    priority_queue <int,vector<int>,greater<int> > stage;
+    priority_queue<int, vector<int>, greater<int>> stage;
     int last = 0;
     for (int i = 0; i < N; i++)
     {
@@ -15,7 +15,7 @@ bool check(int stageSize)
             last = stage.top();
             stage.pop();
         }
-        if  (last + cows[i] > T)
+        if (last + cows[i] > T)
         {
             return false;
         }
@@ -29,7 +29,7 @@ int main()
     ifstream fin("cowdance.in");
     ofstream fout("cowdance.out");
     fin >> N >> T;
-    
+
     int temp;
     for (int i = 0; i < N; i++)
     {
@@ -49,7 +49,6 @@ int main()
         {
             left = stageSize + 1;
         }
-        
     }
 
     fout << stageSize;

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct dot
@@ -17,7 +17,8 @@ void dfs(int a)
     visited[a] = true;
     for (int i = 0; i < N; i++)
     {
-        if (a == i) continue;
+        if (a == i)
+            continue;
         int actuaDis = pow(dots[i].x - dots[a].x, 2) + pow(dots[i].y - dots[a].y, 2);
         if (actuaDis <= pow(dots[a].r, 2) && visited[i] == false)
         {
@@ -28,7 +29,8 @@ void dfs(int a)
     return;
 }
 
-int main(){
+int main()
+{
     ifstream fin("moocast.in");
     ofstream fout("moocast.out");
     fin >> N;
@@ -43,7 +45,7 @@ int main(){
         dfs(i);
         ans = max(ans, counter);
     }
-    
+
     fout << ans + 1;
     return 0;
 }

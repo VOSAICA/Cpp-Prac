@@ -15,23 +15,29 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
-int n,k;
-int* getRightmost(int* list, int k) {
-    int* ret = new int[n];
-    int j = n-1;
-    for(int i =n-1; i >= 0; i--) {
-        while(j >= 0 && list[j] - list[i] > k) {
+int n, k;
+int *getRightmost(int *list, int k)
+{
+    int *ret = new int[n];
+    int j = n - 1;
+    for (int i = n - 1; i >= 0; i--)
+    {
+        while (j >= 0 && list[j] - list[i] > k)
+        {
             j--;
         }
         ret[i] = j;
     }
     return ret;
 }
-int* getLeftmost(int* list, int k) {
-    int* ret = new int[n];
+int *getLeftmost(int *list, int k)
+{
+    int *ret = new int[n];
     int j = 0;
-    for(int i = 0; i < n; i++) {
-        while(j < n && list[i] - list[j] > k) {
+    for (int i = 0; i < n; i++)
+    {
+        while (j < n && list[i] - list[j] > k)
+        {
             j++;
         }
         ret[i] = j;
@@ -40,39 +46,44 @@ int* getLeftmost(int* list, int k) {
 }
 int main()
 {
-    
-    cin>>n>>k;
-    int *list=(int*)malloc(n*sizeof(int));
-    for(int i = 0; i < n; i++) {
-            cin>>list[i];
-        }
-    sort(list,list+n);
+
+    cin >> n >> k;
+    int *list = (int *)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++)
+    {
+        cin >> list[i];
+    }
+    sort(list, list + n);
     // rightmostIndex[i] - the index of the smallest diamond that can be included given that the smallest diamond in the case has size list[i].
     // leftmostIndex[i] - the index of the smallest diamond that can be included given that the largest diamond in the case has size list[i].
     // leftSize - stores the maximum number of diamonds given that all diamonds have size at most list[i].
-    int* leftmostIndex = getLeftmost(list, k);
-    int* leftSize = new int[n];
-    for(int i = 0; i < n; i++) {
+    int *leftmostIndex = getLeftmost(list, k);
+    int *leftSize = new int[n];
+    for (int i = 0; i < n; i++)
+    {
         leftSize[i] = i - leftmostIndex[i] + 1;
-        if(i > 0) {
-            leftSize[i] = max(leftSize[i], leftSize[i-1]);
+        if (i > 0)
+        {
+            leftSize[i] = max(leftSize[i], leftSize[i - 1]);
         }
     }
-    int* rightmostIndex = getRightmost(list, k);
-    int* rightSize = new int[n];
-    for(int i = n-1; i >= 0; i--) {
+    int *rightmostIndex = getRightmost(list, k);
+    int *rightSize = new int[n];
+    for (int i = n - 1; i >= 0; i--)
+    {
         rightSize[i] = rightmostIndex[i] - i + 1;
-        if(i < n-1) {
-            rightSize[i] = max(rightSize[i], rightSize[i+1]);
+        if (i < n - 1)
+        {
+            rightSize[i] = max(rightSize[i], rightSize[i + 1]);
         }
     }
     int ret = 0;
-    for(int i = 0; i < n-1; i++) {
-        ret = max(ret, leftSize[i] + rightSize[i+1]);
+    for (int i = 0; i < n - 1; i++)
+    {
+        ret = max(ret, leftSize[i] + rightSize[i + 1]);
     }
-    cout<<ret;
+    cout << ret;
     free(list);
     delete[] rightSize;
     delete[] leftSize;
-    
 }

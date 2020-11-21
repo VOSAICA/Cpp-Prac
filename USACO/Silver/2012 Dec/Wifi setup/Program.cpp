@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int A, B, N;
 float cow[2001];
@@ -29,7 +29,7 @@ int main()
         fin >> cow[i];
     }
     sort(cow, cow + N);
-    
+
     fout << solve();
     return 0;
 }

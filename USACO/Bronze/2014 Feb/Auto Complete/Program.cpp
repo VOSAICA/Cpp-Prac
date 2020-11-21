@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int W, N;
@@ -6,7 +6,7 @@ struct word
 {
     int place;
     string content;
-}words[1001];
+} words[1001];
 
 string words2[1001];
 
@@ -15,12 +15,13 @@ bool substr(string prefix, string b)
     int n = prefix.length();
     for (int i = 0; i < n; i++)
     {
-        if (prefix[i] == b[i])  continue;
-        else    return false;
+        if (prefix[i] == b[i])
+            continue;
+        else
+            return false;
     }
     return true;
 }
-
 
 int find(int term, string prefix)
 {
@@ -61,8 +62,10 @@ int main()
     {
         fin >> term >> prefix;
         int ans = find(term, prefix);
-        if (i == N - 1)  fout << ans;
-        else fout << ans << endl;
+        if (i == N - 1)
+            fout << ans;
+        else
+            fout << ans << endl;
     }
-	return 0;
+    return 0;
 }

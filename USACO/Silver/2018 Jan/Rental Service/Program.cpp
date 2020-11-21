@@ -1,11 +1,11 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct shopmilk
 {
     int quat;
     int price;
-}shops[100001];
+} shops[100001];
 
 bool cmp(shopmilk a, shopmilk b)
 {
@@ -41,7 +41,7 @@ int main()
     {
         fin >> farmer[i];
     }
-    
+
     sort(cow, cow + N, bts);
     sort(shops, shops + M, cmp);
     sort(farmer, farmer + R, bts);
@@ -54,9 +54,7 @@ int main()
     int left = shops[0].quat;
     for (int i = 0; i < M; i++)
     {
-        
     }
-    
 
     fout.close();
     return 0;

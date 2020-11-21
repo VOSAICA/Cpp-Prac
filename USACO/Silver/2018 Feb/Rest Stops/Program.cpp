@@ -1,6 +1,6 @@
-#include<iostream>
-#include<fstream>
-#include<algorithm>
+#include <iostream>
+#include <fstream>
+#include <algorithm>
 using namespace std;
 
 int n;
@@ -11,9 +11,9 @@ struct rest
 {
     int dis;
     int c;
-}rests[100000];
+} rests[100000];
 
-bool compare(rest a,rest b)
+bool compare(rest a, rest b)
 {
     return a.c > b.c;
 }
@@ -24,7 +24,7 @@ int main()
     fin.open("reststops.in");
     fin >> l >> n >> rF >> rB;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         fin >> rests[i].dis;
         fin >> rests[i].c;
@@ -34,12 +34,12 @@ int main()
     int far = 0;
     int timespan = 0;
     int satis = 0;
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(rests[i].dis > far)
+        if (rests[i].dis > far)
         {
             far = rests[i].dis;
-            if(rB * rests[i].dis + timespan <= rF * rests[i].dis)
+            if (rB * rests[i].dis + timespan <= rF * rests[i].dis)
             {
                 satis += (rests[i].dis * (rF - rB) - timespan) * rests[i].c;
                 timespan = rests[i].dis * (rF - rB);

@@ -1,11 +1,11 @@
-#include<iostream>
-#include<algorithm>
-#include<fstream>
-#include<vector>
+#include <iostream>
+#include <algorithm>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 int N, K, R;
-vector <int> A, B;
+vector<int> A, B;
 int main()
 {
 	ifstream fin;
@@ -30,9 +30,12 @@ int main()
 	while ((high - low) > 1)
 	{
 		time = 0;
-		for(int i = 0; i < A.size(); i++) B.push_back(A[i]);
-		if ((high + low) % 2 == 0) R = (high + low) / 2;
-		else R = (high + low + 1) / 2;
+		for (int i = 0; i < A.size(); i++)
+			B.push_back(A[i]);
+		if ((high + low) % 2 == 0)
+			R = (high + low) / 2;
+		else
+			R = (high + low + 1) / 2;
 		int range = 2 * R;
 
 		while (B.size() > 0)
@@ -40,9 +43,11 @@ int main()
 			int num = B[0];
 			B.erase(B.begin());
 			time++;
-			while (B[0] <= num + range && B.size() > 0) B.erase(B.begin());
+			while (B[0] <= num + range && B.size() > 0)
+				B.erase(B.begin());
 		}
-		if (time > K) low = R;
+		if (time > K)
+			low = R;
 		else
 		{
 			ans = R;

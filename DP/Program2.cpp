@@ -1,5 +1,5 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int a[100], dp[100];
@@ -8,7 +8,7 @@ int main()
 {
     int n;
     cin >> n;
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> a[i];
     }
@@ -16,10 +16,11 @@ int main()
     dp[0] = a[0];
 
     int maxValue = 0;
-    for(int i = 1; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         dp[i] = max(a[i], dp[i - 1] + a[i]);
-        if(dp[i] > maxValue) maxValue = dp[i];
+        if (dp[i] > maxValue)
+            maxValue = dp[i];
     }
 
     cout << maxValue;

@@ -1,9 +1,10 @@
-#include<iostream>
+#include <iostream>
 #include <cstring>
 using namespace std;
 
 int n, s, l;
-struct snakeAndLadder{
+struct snakeAndLadder
+{
     int from, to;
 };
 
@@ -15,7 +16,7 @@ int main()
     int step = 0;
     cin >> n >> s >> l;
     snakeAndLadder obstacle[100];
-    for(int i = 0; i < s + l; i++)
+    for (int i = 0; i < s + l; i++)
     {
         cin >> obstacle[i].from;
         cin >> obstacle[i].to;
@@ -23,26 +24,29 @@ int main()
     memset(grid, 0, sizeof(grid));
     grid[1] = 1;
 
-    while(grid[n * n] == 0)
+    while (grid[n * n] == 0)
     {
         memcpy(bakgrid, grid, sizeof(grid));
         memset(grid, 0, sizeof(grid));
-        for(int i = 1; i < n * n; i++)
+        for (int i = 1; i < n * n; i++)
         {
-            if(bakgrid[i] == 0) continue;
-            for(int k = 1; k <= 6; k++)
+            if (bakgrid[i] == 0)
+                continue;
+            for (int k = 1; k <= 6; k++)
             {
                 deal = 0;
-                if(k + i > n * n) break;
-                for(int j = 0; j < s + l; j++)
+                if (k + i > n * n)
+                    break;
+                for (int j = 0; j < s + l; j++)
                 {
-                    if(obstacle[j].from == i + k)
+                    if (obstacle[j].from == i + k)
                     {
                         grid[obstacle[j].to] = 1;
-                        deal = 1; break;
+                        deal = 1;
+                        break;
                     }
                 }
-                if(deal == 0 && grid[i + k] == 0)
+                if (deal == 0 && grid[i + k] == 0)
                 {
                     grid[i + k] = 1;
                 }
@@ -51,7 +55,6 @@ int main()
         step++;
     }
     cout << step;
-
 
     return 0;
 }

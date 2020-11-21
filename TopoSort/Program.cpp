@@ -1,6 +1,6 @@
-#include<iostream>
-#include<vector>
-#include<queue>
+#include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
 vector<int> G[101];
@@ -11,19 +11,19 @@ void topoSort()
 {
     int num = 0;
     queue<int> q;
-    for(int i = 1; i < n + 1; i++)
+    for (int i = 1; i < n + 1; i++)
     {
         if (inDegree[i] == 0)
         {
             q.push(i);
         }
     }
-    while (! q.empty())
+    while (!q.empty())
     {
         int u = q.front();
         cout << u;
         q.pop();
-        for(int i = 0; i < G[u].size(); i++)
+        for (int i = 0; i < G[u].size(); i++)
         {
             int v = G[u][i];
             inDegree[v]--;
@@ -35,7 +35,6 @@ void topoSort()
         G[u].clear();
         num++;
     }
-
 }
 
 int main()
@@ -49,7 +48,6 @@ int main()
         inDegree[B]++;
     }
     topoSort();
-
 
     return 0;
 }

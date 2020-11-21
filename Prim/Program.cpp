@@ -1,5 +1,5 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
 #include <cstring>
 using namespace std;
 
@@ -47,7 +47,6 @@ void Prim(int u0)
         }
     }
     cout << sumWeight << endl;
-
 }
 
 int main()
@@ -64,8 +63,10 @@ int main()
     {
         for (int j = 1; j <= n; j++)
         {
-            if (i == j) Edge[i][j] = 0;
-            else if (Edge[i][j] == 0) Edge[i][j] = 10000;
+            if (i == j)
+                Edge[i][j] = 0;
+            else if (Edge[i][j] == 0)
+                Edge[i][j] = 10000;
         }
     }
     Prim(1);

@@ -1,14 +1,14 @@
-﻿#include<iostream>
-#include<fstream>
-#include<algorithm>
-#include<vector>
+﻿#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
 int C, N;
 struct cow
 {
     int start, end;
-}cows[20000];
+} cows[20000];
 
 bool cmp(cow a, cow b)
 {
@@ -45,7 +45,5 @@ int main()
         }
     }
 
-
     return 0;
 }
-

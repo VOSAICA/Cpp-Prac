@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int N, M;
@@ -7,7 +7,7 @@ struct zone
     long long start, end;
 };
 
-vector <zone> zones;
+vector<zone> zones;
 
 bool cmp(zone a, zone b)
 {
@@ -30,10 +30,10 @@ bool judge(int d)
             cows++;
         }
     }
-    if (cows < N) return false;
+    if (cows < N)
+        return false;
     return true;
 }
-
 
 int main()
 {
@@ -48,8 +48,8 @@ int main()
     }
     sort(zones.begin(), zones.end(), cmp);
 
-    int left = 1, right = zones[M - 1].end / (N - 2)+ 1, mid;
-    while(left != right)
+    int left = 1, right = zones[M - 1].end / (N - 2) + 1, mid;
+    while (left != right)
     {
         mid = (left + right) / 2;
         if (judge(mid))

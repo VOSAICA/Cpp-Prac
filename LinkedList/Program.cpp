@@ -1,13 +1,13 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-struct node{
+struct node
+{
     int data;
-    node* next;
+    node *next;
 };
 
-
-node* create(int array[], int length)
+node *create(int array[], int length)
 {
     node *cur, *pre, *head;
     head = new node;
@@ -24,30 +24,30 @@ node* create(int array[], int length)
     return head;
 }
 
-void insert(node* head, int pos, int x)
+void insert(node *head, int pos, int x)
 {
-    node* cur = head;
+    node *cur = head;
     for (int i = 0; i < pos - 1; i++)
     {
         cur = cur->next;
     }
-    node* insertNode = new node;
+    node *insertNode = new node;
     insertNode->data = x;
     insertNode->next = cur->next;
     cur->next = insertNode;
 }
 
-void delPos(node* head, int pos)
+void delPos(node *head, int pos)
 {
-    node* cur = head;
-    node* del;
-    for(int i = 0; i < pos - 1; i++)
+    node *cur = head;
+    node *del;
+    for (int i = 0; i < pos - 1; i++)
     {
         cur = cur->next;
     }
     del = cur->next;
     cur->next = cur->next->next;
-    delete(del);
+    delete (del);
 }
 
 int main()
@@ -58,10 +58,10 @@ int main()
         array[i] = i;
     }
     int length = sizeof(array) / sizeof(int);
-    node* head = create(array, 10);
+    node *head = create(array, 10);
 
-    node* point = head->next;
-    while(point != NULL)
+    node *point = head->next;
+    while (point != NULL)
     {
         cout << point->data << " ";
         point = point->next;
@@ -72,7 +72,7 @@ int main()
     delPos(head, 7);
 
     point = head->next;
-    while(point != NULL)
+    while (point != NULL)
     {
         cout << point->data << " ";
         point = point->next;

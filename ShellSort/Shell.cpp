@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void Print(int a[], int l)
@@ -13,25 +13,26 @@ void Print(int a[], int l)
 void ShellSort(int a[], int l)
 {
 
-	int pace = l/2;
-	while(pace >= 1)
+	int pace = l / 2;
+	while (pace >= 1)
 	{
-		cout<<"pace: "<<pace<<endl;
-		for(int i = pace; i < l; i++)
+		cout << "pace: " << pace << endl;
+		for (int i = pace; i < l; i++)
 		{
-			if(a[i] < a[i - pace])
+			if (a[i] < a[i - pace])
 			{
 				int j = i;
 				int current = a[i];
-				while(current < a[j - pace] && (j - pace) > -1){
-					a[j] = a[j- pace];
+				while (current < a[j - pace] && (j - pace) > -1)
+				{
+					a[j] = a[j - pace];
 					j -= pace;
 				}
 				a[j] = current;
 			}
 			Print(a, 8);
 		}
-		pace = pace/2;
+		pace = pace / 2;
 	}
 }
 

@@ -8,33 +8,36 @@ int main()
     ifstream in;
     in.open("herding.in");
     in >> a >> b >> c;
-    if(a > c) swap(a, c);
-    if(a > b) swap(a, b);
-    if(b > c) swap(b, c);
-    
+    if (a > c)
+        swap(a, c);
+    if (a > b)
+        swap(a, b);
+    if (b > c)
+        swap(b, c);
+
     ofstream out;
     out.open("herding.out");
 
-    if(a + 2 == c)
+    if (a + 2 == c)
     {
-        out<<0<<endl;
+        out << 0 << endl;
     }
-    else if(a + 2 == b || b + 2 == c)
+    else if (a + 2 == b || b + 2 == c)
     {
-        out<<1<<endl;
+        out << 1 << endl;
     }
     else
     {
-        out<<2<<endl;
+        out << 2 << endl;
     }
 
-    if((b - a - 1) > (c - b - 1))
+    if ((b - a - 1) > (c - b - 1))
     {
-        out<<b - a - 1<<endl;
+        out << b - a - 1 << endl;
     }
     else
     {
-        out<<c - b - 1<<endl;
+        out << c - b - 1 << endl;
     }
 
     return 0;

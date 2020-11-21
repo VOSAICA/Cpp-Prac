@@ -1,9 +1,9 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 char map[9][9];
 int n, m;
-int dir[8][2] = { {0, -1}, {0, 1}, {1, 0}, {-1, 0}, {-1, -1}, {1, 1}, {-1, 1}, {1, -1} };
+int dir[8][2] = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}, {-1, -1}, {1, 1}, {-1, 1}, {1, -1}};
 
 void dfs(int x, int y)
 {
@@ -14,7 +14,8 @@ void dfs(int x, int y)
 	{
 		xx = x + dir[i][0];
 		yy = y + dir[i][1];
-		if (xx < 0 || yy < 0 || xx > n || yy > m) continue;
+		if (xx < 0 || yy < 0 || xx > n || yy > m)
+			continue;
 		if (map[xx][yy] == '@')
 		{
 			dfs(xx, yy);

@@ -1,5 +1,5 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 #include <cstring>
 using namespace std;
 
@@ -7,21 +7,19 @@ char grid[100][10];
 int N, K;
 void refresh(int i, int j)
 {
-    if(grid[i][j] == '0')
+	if (grid[i][j] == '0')
 	{
-		for(int k = i; k >= 0; k--)
+		for (int k = i; k >= 0; k--)
 		{
-			if(grid[k][j] != '0')
+			if (grid[k][j] != '0')
 			{
 				grid[i][j] = grid[k][j];
 				grid[k][j] = '0';
-                break;
+				break;
 			}
 		}
 	}
 }
-
-
 
 int main()
 {
@@ -35,24 +33,24 @@ int main()
 		{
 			fin >> grid[i][j];
 		}
-    }
+	}
 
-    for (int i = N - 1; i >= 0; i--)
+	for (int i = N - 1; i >= 0; i--)
 	{
 		for (int j = 0; j < 10; j++)
 		{
-            refresh(i, j);
-            for (int i = 0; i < N; i++)
-	        {
-		        for (int j = 0; j < 10; j++)
-		        {
-			        //cout << grid[i][j];
-		        }
-		        //cout << endl;
-	        }
-            //cout << endl << endl;
+			refresh(i, j);
+			for (int i = 0; i < N; i++)
+			{
+				for (int j = 0; j < 10; j++)
+				{
+					//cout << grid[i][j];
+				}
+				//cout << endl;
+			}
+			//cout << endl << endl;
 		}
-    }
+	}
 
 	for (int i = 0; i < N; i++)
 	{

@@ -1,15 +1,16 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 using namespace std;
 
-struct fruit{
+struct fruit
+{
     string name;
     int price;
-    friend bool operator < (fruit f1, fruit f2){
+    friend bool operator<(fruit f1, fruit f2)
+    {
         return f1.price < f2.price;
     }
-}f1, f2, f3;
-
+} f1, f2, f3;
 
 int main()
 {
