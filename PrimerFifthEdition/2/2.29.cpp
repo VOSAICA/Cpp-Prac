@@ -4,7 +4,7 @@ const int ic, &r = ic; //常量未初始化
 const int *const p3;   //常量未初始化
 const int *p;
 
-int mian()
+int main()
 {
     i = ic;
     p1 = p3;
