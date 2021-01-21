@@ -1,4 +1,5 @@
 typedef char *pstring; //其实是typedef char* pstring;
+using pstring = char *;
 
 int main()
 {
