@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 long K, N;
 long a[1000];

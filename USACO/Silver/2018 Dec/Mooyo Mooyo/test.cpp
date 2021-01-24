@@ -1,6 +1,6 @@
-#include <iostream>
-#include <fstream>
 #include <cstring>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
 int N = 6, K = 3;

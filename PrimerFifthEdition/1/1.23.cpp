@@ -1,6 +1,6 @@
+#include "Sales_item.h"
 #include <iostream>
 #include <string>
-#include "Sales_item.h"
 
 int main()
 {

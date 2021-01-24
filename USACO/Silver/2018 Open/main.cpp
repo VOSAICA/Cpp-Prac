@@ -21,11 +21,11 @@
  * running time only depends on the number of edges in the graph, not the number of nodes
  
  */
-#include <iostream>
+#include <algorithm>
 #include <fstream>
+#include <iostream>
 #include <map>
 #include <set>
-#include <algorithm>
 using namespace std;
 
 int N, B[1001][1001], cellid[1001][1001], global_regid;

@@ -1,27 +1,28 @@
-#include<iostream>
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-struct Edge{
+struct Edge
+{
     int d, w;
 };
 
 int n, m;
-int* loc;
-int* component;
-vector<Edge>* edges;
-
+int *loc;
+int *component;
+vector<Edge> *edges;
 
 void dfs(int curr, int label, int minW)
 {
-    if(component[curr] == label) return;
+    if (component[curr] == label)
+        return;
     component[curr] = label;
-    for(Edge child: edges[curr])
+    for (Edge child : edges[curr])
     {
-        if(child.w >= minW)
+        if (child.w >= minW)
         {
             dfs(child.d, label, minW);
         }
@@ -33,17 +34,17 @@ bool Valid(int minW)
     fill(component, component + n, -1);
     int numcorp = 0;
     cout << "Valid\n";
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(component[i] < 0)
+        if (component[i] < 0)
         {
             dfs(i, numcorp++, minW);
         }
     }
     cout << "Valid\n";
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(component[i] != component[loc[i]])
+        if (component[i] != component[loc[i]])
         {
             return false;
         }
@@ -57,14 +58,14 @@ int main()
     component = new int[n];
     edges = new vector<Edge>[n];
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         int index;
         cin >> index;
         loc[i] = --index;
     }
 
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < m; i++)
     {
         int a, b, w;
         cin >> a >> b >> w;
@@ -78,13 +79,12 @@ int main()
         edges[b].push_back(e2);
     }
 
-
     int minW = 0;
     int maxW = 1000000001;
-    while(minW != maxW)
+    while (minW != maxW)
     {
         int mid = (minW + maxW + 1) / 2;
-        if(Valid(mid))
+        if (Valid(mid))
         {
             minW = mid;
         }
@@ -94,7 +94,7 @@ int main()
         }
     }
     cout << "1";
-    if(minW > 1e9)
+    if (minW > 1e9)
     {
         minW = -1;
     }

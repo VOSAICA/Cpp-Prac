@@ -1,6 +1,6 @@
-#include <iostream>
-#include <fstream>
 #include <cstring>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
 char grid[100][10];

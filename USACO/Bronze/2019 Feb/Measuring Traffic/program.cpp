@@ -1,7 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <stdint.h>
 #include <Windows.h>
+#include <fstream>
+#include <iostream>
+#include <stdint.h>
 using namespace std;
 
 int main()

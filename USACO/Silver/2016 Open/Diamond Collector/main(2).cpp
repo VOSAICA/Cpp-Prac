@@ -10,9 +10,9 @@
  
     Bessie想让这些陈列架上的钻石保持相似的大小，所以她不会把两个大小相差K以上的钻石同时放在一个陈列架上（如果两颗钻石的大小差值为K，那么它们可以同时放在一个陈列架上）。现在给出K，请你帮Bessie确定她最多一共可以放多少颗钻石在这两个陈列架上。
  */
+#include <algorithm>
 #include <cstdio>
 #include <iostream>
-#include <algorithm>
 #include <vector>
 using namespace std;
 int n, k;

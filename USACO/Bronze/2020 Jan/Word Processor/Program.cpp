@@ -1,6 +1,6 @@
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 using namespace std;
 int n, k;
 string essay[100];

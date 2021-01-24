@@ -75,10 +75,10 @@
    }
  }
  */
-#include <cstdio>
-#include <iostream>
-#include <cstdlib>
 #include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
 #include <vector>
 using namespace std;
 #define GET_ARRAY_LEN(array, len)             \
