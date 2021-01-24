@@ -13,7 +13,7 @@ int main()
 
     for (char &chara : ori)
     {
-        if(!ispunct(chara))
+        if (!ispunct(chara))
             res += chara;
     }
     cout << res;
