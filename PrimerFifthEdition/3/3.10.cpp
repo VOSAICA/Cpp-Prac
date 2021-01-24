@@ -1,6 +1,6 @@
+#include <cctype>
 #include <iostream>
 #include <string>
-#include <cctype>
 
 using std::cin;
 using std::cout;
