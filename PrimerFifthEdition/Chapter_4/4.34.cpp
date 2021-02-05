@@ -13,7 +13,7 @@ int main()
 
     double dval = fval + ival; //都到double
 
-    auto whatSoEver = dval + ival * cval;//char 先到 double，然后
+    auto whatSoEver = dval + ival * cval; //char先到int相乘，然后转换为double
 
     return 0;
 }
