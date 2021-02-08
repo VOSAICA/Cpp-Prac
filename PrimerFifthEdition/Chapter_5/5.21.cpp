@@ -1,6 +1,6 @@
+#include <cctype>
 #include <iostream>
 #include <string>
-#include <cctype>
 
 using std::cin;
 using std::cout;
@@ -13,10 +13,10 @@ int main()
 
     while (cin >> s)
     {
-        if(!isupper(s[0]))
+        if (!isupper(s[0]))
         {
-        last_s = s;
-        continue;
+            last_s = s;
+            continue;
         }
         if (s == last_s)
         {
