@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 using std::cin;
 using std::cout;
