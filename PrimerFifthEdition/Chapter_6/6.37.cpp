@@ -14,7 +14,7 @@ string10_ref func1(string10_ref b)
 auto func2(string (&b)[10]) -> string (&)[10]
 {
     return b;
-}
+} //我觉得尾置返回类比较好，方便
 
 string a[10];
 decltype(a) &func3(string (&b)[10])
