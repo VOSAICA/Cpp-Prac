@@ -13,7 +13,7 @@ int main()
     {
         cout << "ok";
     }
-    assert(cin);
+    assert(cin); //输入Ctrl^Z的时候为false，被强制退出
 
     return 0;
 }
