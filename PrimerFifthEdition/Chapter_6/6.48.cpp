@@ -8,7 +8,7 @@ using std::string;
 
 int main()
 {
-    string s, sought{"cnm"};
+    string s, sought{ "cnm" };
     while (cin >> s && s != sought)
     {
         cout << "ok";

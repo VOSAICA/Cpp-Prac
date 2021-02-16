@@ -18,7 +18,7 @@ int main()
                 total.revenue += trans.revenue;
             else
             {
-                cout << "Not same book" << std ::endl;
+                cout << "Not same book" << std::endl;
                 total = trans;
             }
         }

@@ -1,4 +1,4 @@
-void manip(int, int){};
+void manip(int, int) {};
 double dobj;
 
 int main()

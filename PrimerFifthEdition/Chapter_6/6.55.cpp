@@ -12,7 +12,7 @@ using calculateFunc = decltype(plus);
 
 int main()
 {
-    vector<calculateFunc *> vec;
+    vector<calculateFunc*> vec;
 
     vec.emplace_back(plus);
     vec.emplace_back(minus);
