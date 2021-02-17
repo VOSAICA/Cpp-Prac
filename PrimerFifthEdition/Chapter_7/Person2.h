@@ -8,8 +8,8 @@ struct Person
     std::string name;
     std::string address;
 
-    std::string get_name() const;
-    std::string get_address() const;
+    std::string get_name() const;    // const成员函数，让const Person对象也能调用它
+    std::string get_address() const; // 同上
 };
 
 std::string Person::get_name() const

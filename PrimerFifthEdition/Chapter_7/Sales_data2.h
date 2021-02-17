@@ -9,7 +9,7 @@ struct Sales_data
     unsigned units_sold = 0;
     double revenue = 0.0;
 
-    std::string isbn() const; //常量成员函数，改变this指针，使其指向常量Sales_data对象
+    std::string isbn() const; // 常量成员函数，改变this指针，使其指向常量Sales_data对象
     double avg_price() const;
     Sales_data& combine(const Sales_data&);
 };
