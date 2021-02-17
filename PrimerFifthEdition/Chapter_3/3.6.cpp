@@ -10,7 +10,7 @@ int main()
     string a;
     cin >> a;
 
-    for (auto &chara : a)
+    for (auto& chara : a)
     {
         chara = 'X';
     }

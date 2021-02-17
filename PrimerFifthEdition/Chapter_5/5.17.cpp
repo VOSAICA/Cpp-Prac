@@ -9,8 +9,8 @@ int main()
     vector<int> a{0, 1, 1, 2};
     vector<int> b{0, 1, 1, 2, 3, 5, 8};
 
-    vector<int> *shorter;
-    vector<int> *longer;
+    vector<int>* shorter;
+    vector<int>* longer;
 
     if (a.size() < b.size())
         shorter = &a, longer = &b;

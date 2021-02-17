@@ -7,13 +7,13 @@ using std::vector;
 
 int main()
 {
-    //Array
+    // Array
     int a[5];
     for (auto ptr_cur = std::begin(a); ptr_cur != std::end(a); ++ptr_cur)
         cin >> *ptr_cur;
 
     int b[5];
-    for (auto &i : b)
+    for (auto& i : b)
         cin >> i;
 
     bool equal = true;
@@ -29,11 +29,11 @@ int main()
     }
     cout << (equal ? "equal\n" : "not equal\n");
 
-    //Vector
+    // Vector
     vector<int> a1(5), b1(5);
-    for (auto &i : a1)
+    for (auto& i : a1)
         cin >> i;
-    for (auto &i : b1)
+    for (auto& i : b1)
         cin >> i;
     cout << (a1 == b1 && a1.size() != 0 ? "equal\n" : "not equal\n");
 

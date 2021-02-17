@@ -6,4 +6,4 @@ int 1_or_2;        //不能数字开头
 double Double = 3.14;
 */
 
-//a, c, d有问题
+// a, c, d有问题

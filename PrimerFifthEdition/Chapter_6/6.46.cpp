@@ -9,8 +9,8 @@ constexpr bool isShorter(const string& s1, const string& s2)
 
 int main()
 {
-    string a{ "arst" };
-    string b{ "ar" };
+    string a{"arst"};
+    string b{"ar"};
 
     int a[isShorter(a, b)];
 

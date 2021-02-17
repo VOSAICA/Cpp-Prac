@@ -2,7 +2,7 @@
 
 using std::cout;
 
-void swap(int &a, int &b)
+void swap(int& a, int& b)
 {
     int temp = a;
     a = b;
@@ -19,4 +19,4 @@ int main()
 
     return 0;
 }
-//引用好使，不用传指针了
+// 引用好使，不用传指针了

@@ -6,7 +6,7 @@ int main()
 {
     double dval;
     int ival;
-    int *pi;
+    int* pi;
     // dval = ival = pi = 0; //不能把空指针赋值给整形
     dval = ival = 0;
     pi = 0;

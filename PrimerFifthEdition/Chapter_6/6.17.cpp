@@ -5,7 +5,7 @@
 using std::cout;
 using std::string;
 
-bool contain_caps(const string &s)
+bool contain_caps(const string& s)
 {
     bool result = false;
     for (auto i : s)
@@ -16,9 +16,9 @@ bool contain_caps(const string &s)
     return result;
 }
 
-void all_tolower(string &s)
+void all_tolower(string& s)
 {
-    for (auto &i : s)
+    for (auto& i : s)
         i = tolower(i);
 }
 

@@ -6,9 +6,9 @@ using std::string;
 int main()
 {
     const string s = "Keep out!";
-    for (auto &c : s)
+    for (auto& c : s)
     {
-        //const char &c
+        // const char &c
     }
 
     return 0;

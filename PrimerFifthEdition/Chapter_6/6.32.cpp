@@ -2,7 +2,7 @@
 
 using std::cout;
 
-int &get(int *arry, int index) //合法
+int& get(int* arry, int index) //合法
 {
     return arry[index];
 }

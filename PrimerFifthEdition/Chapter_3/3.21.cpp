@@ -8,15 +8,15 @@ using std::vector;
 
 int main()
 {
-    vector<int> v1;              //空
-    vector<int> v2(10);          //十个0
-    vector<int> v3(10, 42);      //十个42
-    vector<int> v4{10};          //10
-    vector<int> v5{10, 42};      //10 42
-    vector<string> v6{10};       //十个""
-    vector<string> v7{10, "hi"}; //十个"hi"
+    vector<int> v1;              // 空
+    vector<int> v2(10);          // 十个0
+    vector<int> v3(10, 42);      // 十个42
+    vector<int> v4{10};          // 10
+    vector<int> v5{10, 42};      // 10 42
+    vector<string> v6{10};       // 十个""
+    vector<string> v7{10, "hi"}; // 十个"hi"
 
-    //std::vector<int>::iterator it;
+    // std::vector<int>::iterator it;
     for (auto it = v1.begin(); it != v1.end(); ++it)
         cout << *it << ' ';
     cout << '\n';
@@ -33,7 +33,7 @@ int main()
         cout << *it << ' ';
     cout << '\n';
 
-    //std::string::iterator it;
+    // std::string::iterator it;
     for (auto it = v6.begin(); it != v6.end(); ++it)
         cout << *it << ' ';
     cout << '\n';

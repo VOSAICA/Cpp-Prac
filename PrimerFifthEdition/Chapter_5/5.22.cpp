@@ -2,7 +2,10 @@
 
 using std::cout;
 
-int get_size() { return 0; }
+int get_size()
+{
+    return 0;
+}
 
 int main()
 {

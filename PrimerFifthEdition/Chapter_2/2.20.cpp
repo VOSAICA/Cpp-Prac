@@ -3,9 +3,9 @@
 int main()
 {
     int i = 42;
-    int *p1 = &i;
+    int* p1 = &i;
     *p1 = *p1 * *p1;
 
-    std::cout << *p1; //42 ^ 2
+    std::cout << *p1; // 42 ^ 2
     return 0;
 }

@@ -12,10 +12,10 @@ int main()
     auto iter = valstr.begin();
 
     cout << *iter++;
-    cout << (*iter)++; //string++
+    cout << (*iter)++; // string++
     cout << (*iter).empty();
-    cout << iter->empty();   //和上一行一样
-    cout << ++*iter;         //++string
+    cout << iter->empty();   // 和上一行一样
+    cout << ++*iter;         // ++string
     cout << iter++->empty(); // string.empty()
 
     return 0;

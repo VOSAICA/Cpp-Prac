@@ -21,7 +21,7 @@ void print(const vector<int>& vec, vector<int>::size_type index)
 
 int main()
 {
-    vector<int> vec{ 0, 2, 4, 1, 6, 7, 3 };
+    vector<int> vec{0, 2, 4, 1, 6, 7, 3};
     print(vec, 0);
 
     return 0;

@@ -4,13 +4,16 @@
 using std::cout;
 using std::vector;
 
-int func(int, int) { return 0; }
+int func(int, int)
+{
+    return 0;
+}
 
 using functype = decltype(func);
-//using functype = int(int, int); //同上
+// using functype = int(int, int); 同上
 
 using funcPtrType = decltype(func)*;
-//using funcPtrType = int (*)(int, int);
+// using funcPtrType = int (*)(int, int);
 
 funcPtrType funcPtr = func;
 

@@ -11,7 +11,7 @@ int main()
     string ori, res;
     std::getline(cin, ori);
 
-    for (char &chara : ori)
+    for (char& chara : ori)
     {
         if (!ispunct(chara))
             res += chara;

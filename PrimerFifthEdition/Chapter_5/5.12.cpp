@@ -8,7 +8,7 @@ int main()
     char ch, last_ch;
     unsigned ffCount = 0, flCount = 0, fiCount = 0;
 
-    while (cin >> std::noskipws >> ch) //no skip whitespace
+    while (cin >> std::noskipws >> ch) // no skip whitespace
     {
         if (last_ch == 'f')
         {

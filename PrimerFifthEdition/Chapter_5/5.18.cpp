@@ -3,7 +3,10 @@
 using std::cin;
 using std::cout;
 
-bool get_response() { return 0; }
+bool get_response()
+{
+    return 0;
+}
 
 int main()
 {

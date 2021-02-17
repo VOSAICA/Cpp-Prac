@@ -4,7 +4,10 @@
 using std::cout;
 using std::string;
 
-bool find(string word) { return word == "true"; }
+bool find(string word)
+{
+    return word == "true";
+}
 
 int main()
 {

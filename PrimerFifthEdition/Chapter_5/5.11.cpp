@@ -11,7 +11,7 @@ int main()
     unsigned spaceCount = 0;
     unsigned tabCount = 0;
 
-    while (cin >> std::noskipws >> ch) //no skip whitespace
+    while (cin >> std::noskipws >> ch) // no skip whitespace
     {
         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
             ++vowelCount;

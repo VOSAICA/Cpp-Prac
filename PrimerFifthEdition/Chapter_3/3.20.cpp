@@ -13,7 +13,7 @@ int main()
     while (cin >> a)
         v.emplace_back(a);
 
-    //vector<int>::size_type v_size = v.size();
+    // vector<int>::size_type v_size = v.size();
     auto v_size = v.size();
 
     for (decltype(v_size) i = 0; i < v_size - 1; ++i)

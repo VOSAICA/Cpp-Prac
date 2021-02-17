@@ -12,9 +12,7 @@ int main()
     }
     total.bookNo = book.bookNo;
 
-    std::cout << total.bookNo << '\n'
-              << total.units_sold << '\n'
-              << total.revenue << std::endl;
+    std::cout << total.bookNo << '\n' << total.units_sold << '\n' << total.revenue << std::endl;
 
     return 0;
 }

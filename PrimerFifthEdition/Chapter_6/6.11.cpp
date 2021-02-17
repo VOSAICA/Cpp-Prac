@@ -2,7 +2,7 @@
 
 using std::cout;
 
-void reset(int &a)
+void reset(int& a)
 {
     a = 0;
 }

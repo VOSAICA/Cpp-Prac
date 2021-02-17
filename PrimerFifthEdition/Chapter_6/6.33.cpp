@@ -4,7 +4,7 @@
 using std::cout;
 using std::vector;
 
-void print(const vector<int> &vec, vector<int>::size_type index)
+void print(const vector<int>& vec, vector<int>::size_type index)
 {
     if (index == vec.size())
         return;

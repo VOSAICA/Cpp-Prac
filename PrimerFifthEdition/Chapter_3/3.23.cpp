@@ -8,7 +8,7 @@ using std::vector;
 int main()
 {
     vector<int> v(10);
-    for (auto &foo : v)
+    for (auto& foo : v)
         cin >> foo;
 
     for (auto it = v.begin(); it != v.end(); ++it)

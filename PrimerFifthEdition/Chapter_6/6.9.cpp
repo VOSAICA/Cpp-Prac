@@ -9,4 +9,4 @@ int main()
 
     return 0;
 }
-//g++ fact.cpp 6.9.cpp
+// g++ fact.cpp 6.9.cpp

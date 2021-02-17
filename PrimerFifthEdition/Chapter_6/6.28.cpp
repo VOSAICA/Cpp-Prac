@@ -14,7 +14,7 @@ struct ErrCode
 void error_msg(ErrCode e, std::initializer_list<string> il)
 {
     cout << e.msg << ": ";
-    for (const auto &elem : il) //const string &
+    for (const auto& elem : il) // const string &
         cout << elem << " ";
     cout << '\n';
 }

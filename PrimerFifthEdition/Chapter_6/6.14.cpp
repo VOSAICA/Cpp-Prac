@@ -6,7 +6,7 @@ using std::cout;
 using std::string;
 using std::vector;
 
-bool is_longer(const string &s1, const string &s2) //传引用，减少拷贝
+bool is_longer(const string& s1, const string& s2) // 传引用，减少拷贝
 {
     return s1.size() > s2.size();
 }

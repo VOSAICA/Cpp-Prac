@@ -17,7 +17,7 @@ int main()
         cout << a << endl;
 
     cin >> a >> b;
-    if (a.size() < b.length()) //size 和 length在实现上没有区别
+    if (a.size() < b.length()) // size 和 length在实现上没有区别
         cout << b;
     else
         cout << a;

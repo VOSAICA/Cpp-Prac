@@ -3,7 +3,10 @@
 using std::cout;
 using std::endl;
 
-int get_value() { return 5; }
+int get_value()
+{
+    return 5;
+}
 
 int main()
 {

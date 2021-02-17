@@ -8,7 +8,7 @@ void print(const int a)
     cout << a << '\n';
 }
 
-void print(int *start, int *end)
+void print(int* start, int* end)
 {
     while (start != end)
     {

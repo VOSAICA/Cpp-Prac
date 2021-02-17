@@ -6,8 +6,7 @@ char c = 0;
 
 int main()
 {
-    std::cout << --a << ' ' << ++b << ' ' << --c << std::endl
-              << a;
+    std::cout << --a << ' ' << ++b << ' ' << --c << std::endl << a;
 
     return 0;
 }

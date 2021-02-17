@@ -4,11 +4,26 @@
 using std::cout;
 using std::vector;
 
-char next_text() { return 'a'; }
-unsigned some_value() { return 1; }
-int get_value() { return 2; }
-int get_num() { return 15; }
-int get_bufCnt() { return 1024; }
+char next_text()
+{
+    return 'a';
+}
+unsigned some_value()
+{
+    return 1;
+}
+int get_value()
+{
+    return 2;
+}
+int get_num()
+{
+    return 15;
+}
+int get_bufCnt()
+{
+    return 1024;
+}
 
 int main()
 {
@@ -33,14 +48,12 @@ int main()
     vector<int> ivec{3, 2, 1, 0};
     switch (index)
     {
-    case 1:
-    {
+    case 1: {
         int ix = get_value();
         ivec[ix] = index;
         break;
     }
-    default:
-    {
+    default: {
         int ix = ivec.size() - 1;
         ivec[ix] = index;
         break;

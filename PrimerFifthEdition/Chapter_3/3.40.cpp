@@ -15,8 +15,7 @@ int main()
     for (auto i : c)
         std::cout << i << ' ';
 
-    std::cout << '\n'
-              << strlen(c);
+    std::cout << '\n' << strlen(c);
 
     return 0;
 }

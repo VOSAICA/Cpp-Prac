@@ -17,7 +17,7 @@ int main()
     int x = 1, y = 12, i = 1;
     int a, b = 4;
     foo bar;
-    foo *p = &bar;
+    foo* p = &bar;
 
     cout << (sizeof x + y) << ' ';
     cout << ((sizeof x) + y) << '\n';

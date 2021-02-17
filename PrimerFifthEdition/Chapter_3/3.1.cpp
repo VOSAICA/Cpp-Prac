@@ -34,9 +34,7 @@ int main()
     }
     total.bookNo = book.bookNo;
 
-    cout << total.bookNo << '\n'
-         << total.units_sold << '\n'
-         << total.revenue << endl;
+    cout << total.bookNo << '\n' << total.units_sold << '\n' << total.revenue << endl;
 
     return 0;
 }

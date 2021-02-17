@@ -17,7 +17,7 @@ int main()
 
     for (auto a : v)
     {
-        for (auto &chara : a)
+        for (auto& chara : a)
             chara = toupper(chara);
         cout << a << '\n';
     }
