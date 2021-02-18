@@ -48,7 +48,8 @@ std::istream& read(std::istream& is, Sales_data& item) // IO类不能被拷贝�
 
 std::ostream& print(std::ostream& os, const Sales_data& item)
 {
-    os << item.isbn() << '\n' << item.units_sold << '\n' << item.revenue << '\n' << item.avg_price() << '\n';
+    os << "\nFrom Here: \n";
+    os << item.isbn() << ' ' << item.units_sold << ' ' << item.revenue << ' ' << item.avg_price() << '\n';
     return os;
 }
 
