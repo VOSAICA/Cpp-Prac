@@ -16,7 +16,6 @@ public:
     void clear(ScreenIndex);
 };
 
-
 class Screen
 {
     friend void Window_mgr::clear(ScreenIndex i);
@@ -50,6 +49,12 @@ private:
 
     void do_display(std::ostream& os) const;
 };
+
+void Window_mgr::clear(ScreenIndex i)
+{
+    Screen& s = screens[i];
+    s.contents = std::string(s.height * s.width, ' ');
+}
 
 Screen::Screen(pos ht, pos wd) : height(ht), width(wd), contents(ht * wd, ' ')
 {
@@ -109,12 +114,6 @@ const Screen& Screen::display(std::ostream& os) const
 inline void Screen::do_display(std::ostream& os) const
 {
     os << contents;
-}
-
-void Window_mgr::clear(ScreenIndex i)
-{
-    Screen& s = screens[i];
-    s.contents = std::string(s.height * s.width, ' ');
 }
 
 #endif
