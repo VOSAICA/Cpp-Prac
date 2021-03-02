@@ -18,16 +18,13 @@ private:
     double revenue = 0.0;
 
 public:
-    Sales_data() : bookNo(""), units_sold(0), revenue(0) // 显式初始化成员
-    {
-    }
-    Sales_data(const std::string& s) : bookNo(s)
+    Sales_data(const std::string s = "default") : bookNo(s), units_sold(0), revenue(0) // 显式初始化成员
     {
     }
     Sales_data(const std::string& s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(p * n)
     {
     }
-    Sales_data(std::istream& is)
+    Sales_data(std::istream& is = std::cin) // 不能多个默认函数
     {
         read(is, *this);
     }
@@ -42,7 +39,7 @@ std::string Sales_data::isbn() const
     return bookNo;
 }
 
-double Sales_data::avg_price() const
+inline double Sales_data::avg_price() const
 {
     if (units_sold)
         return revenue / units_sold;
@@ -85,3 +82,15 @@ Sales_data add(const Sales_data& lhs, const Sales_data& rhs)
 }
 
 #endif
+
+using std::cin;
+using std::cout;
+
+int main()
+{
+    Sales_data next;
+
+    print(cout, next);
+
+    return 0;
+}

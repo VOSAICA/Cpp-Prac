@@ -23,7 +23,7 @@ struct Sales_data
     Sales_data(std::istream& is)
     {
         read(is, *this);
-    };
+    }
 
     std::string isbn() const; // 常量成员函数，改变this指针，使其指向常量Sales_data对象
     double avg_price() const;
