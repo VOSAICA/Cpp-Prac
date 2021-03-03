@@ -1,1 +1,1 @@
-my own practise for c++
+My own practise for C++
