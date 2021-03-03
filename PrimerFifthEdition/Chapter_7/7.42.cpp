@@ -1,5 +1,5 @@
-// Book1.h
-#include "Book1.h"
+// Book2.h
+#include "Book2.h"
 #include <iostream>
 
 int main()
