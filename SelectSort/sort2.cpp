@@ -32,9 +32,8 @@ void SelectSort(int a[], int l)
                 indexMax = j;
             }
         }
-        //cout<<"l - i: "<<l - 1 - i<<endl;
-        cout << min << endl
-             << max << endl;
+        // cout<<"l - i: "<<l - 1 - i<<endl;
+        cout << min << endl << max << endl;
         int temp = a[i];
         a[i] = a[indexMin];
         a[indexMin] = temp;
