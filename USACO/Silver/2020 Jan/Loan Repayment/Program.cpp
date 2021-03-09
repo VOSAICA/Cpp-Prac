@@ -31,11 +31,11 @@ int valid(long long N, long long K, long long M, long long X)
 int main()
 {
     ifstream fin;
-    //fin.open("loan.in");
+    // fin.open("loan.in");
     cin >> N >> K >> M;
-    //ofstream fout;
+    // ofstream fout;
 
-    //freopen("loan.out","w",stdout);  //输出重定向，输出数据将保存在mountains.out文件中
+    // freopen("loan.out","w",stdout);  //输出重定向，输出数据将保存在mountains.out文件中
 
     long long low, high, mid;
     low = 1;
@@ -52,8 +52,8 @@ int main()
             high = mid - 1;
         }
     }
-    //printf("lld\n", N);
+    // printf("lld\n", N);
     cout << high;
-    //fclose(stdout);
+    // fclose(stdout);
     return 0;
 }

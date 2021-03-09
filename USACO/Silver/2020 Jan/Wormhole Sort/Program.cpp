@@ -11,9 +11,9 @@ struct Edge
 };
 
 int n, m;
-int *loc;
-int *component;
-vector<Edge> *edges;
+int* loc;
+int* component;
+vector<Edge>* edges;
 
 void dfs(int curr, int label, int minW)
 {
@@ -99,9 +99,9 @@ int main()
         minW = -1;
     }
     cout << minW;
-    //delete(loc);
-    //delete(component);
-    //delete(edges);
+    // delete(loc);
+    // delete(component);
+    // delete(edges);
 
     return 0;
 }

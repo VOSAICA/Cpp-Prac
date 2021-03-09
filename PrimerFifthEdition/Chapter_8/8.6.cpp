@@ -1,18 +1,19 @@
 #include "Sales_data1.h"
+#include <fstream>
 #include <iostream>
 
-using std::cin;
 using std::cout;
 using std::endl;
 
 int main()
 {
     Sales_data total;
-    if (cin >> total.bookNo >> total.revenue)
+    std::ifstream ifs("Sales_data.txt");
+    if (ifs >> total.bookNo >> total.revenue)
     {
         Sales_data trans;
 
-        while (cin >> trans.bookNo >> trans.revenue)
+        while (ifs >> trans.bookNo >> trans.revenue)
         {
             if (total.bookNo == trans.bookNo)
                 total.revenue += trans.revenue;
