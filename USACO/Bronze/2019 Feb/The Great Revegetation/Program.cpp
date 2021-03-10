@@ -13,7 +13,7 @@ struct node
 int main()
 {
     ifstream in("revegetate.in");
-    int N, M, a[150], b[150]; //N块草地，M头奶牛
+    int N, M, a[150], b[150]; // N块草地，M头奶牛
     in >> N >> M;
     for (int i = 0; i < M; i++)
     {
@@ -51,7 +51,8 @@ int main()
         {
             if (nodes[i].c != 0)
             {
-                if ((nodes[i].color == nodes[nodes[i].a].color) || (nodes[i].color == nodes[nodes[i].b].color) || (nodes[i].color == nodes[nodes[i].c].color))
+                if ((nodes[i].color == nodes[nodes[i].a].color) || (nodes[i].color == nodes[nodes[i].b].color) ||
+                    (nodes[i].color == nodes[nodes[i].c].color))
                     nodes[i].color = g;
             }
             else if (nodes[i].c == 0)

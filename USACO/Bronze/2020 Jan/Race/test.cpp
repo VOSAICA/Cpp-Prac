@@ -26,7 +26,7 @@ long time_request(int x)
     long travel;
     long leftDis = 0;
 
-    time = terminalSpeed - speed; //b
+    time = terminalSpeed - speed; // b
     travel = sigma(speed, terminalSpeed);
 
     cout << "time1: " << time << endl;

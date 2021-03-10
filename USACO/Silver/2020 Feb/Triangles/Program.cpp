@@ -42,7 +42,7 @@ int reArea(int a)
     {
         if (points[i].x == points[a].x && points[i].y != points[a].y)
         {
-            //cout << points[a].x << points[a].y << " " << points[i].x << points[i].y << endl;
+            // cout << points[a].x << points[a].y << " " << points[i].x << points[i].y << endl;
             points[a].pairY.push_back(points[i].y);
             int verticalLens = abs(points[i].y - points[a].y);
             horizonLens = findFarX(i);
@@ -50,9 +50,9 @@ int reArea(int a)
                 break;
             for (vector<int>::iterator Xlen = horizonLens.begin(); Xlen != horizonLens.end(); Xlen++)
             {
-                //cout << "Xlen: " << *Xlen << endl;
+                // cout << "Xlen: " << *Xlen << endl;
                 area += verticalLens * (*Xlen);
-            } //cout << endl;
+            } // cout << endl;
         }
     }
     return area;

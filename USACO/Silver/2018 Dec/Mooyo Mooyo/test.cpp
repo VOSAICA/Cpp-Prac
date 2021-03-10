@@ -12,52 +12,52 @@ int enough;
 
 void Dfs(int si, int sj)
 {
-	int xi, xj;
-	int temp = grid[si][sj];
-	been[si][sj] = 1;
-	if (si < 0 || si > N - 1 || sj < 0 || sj > 9)
-		return;
-	for (int i = 0; i < 4; i++)
-	{
-		xi = si + dir[i][0];
-		xj = sj + dir[i][1];
-		if (grid[xi][xj] == temp && been[xi][xj] == 0)
-		{
-			enough++;
-			Dfs(xi, xj);
-		}
-	}
-	if (enough >= K)
-		grid[si][sj] = 0;
-	else
-		grid[si][sj] = temp;
+    int xi, xj;
+    int temp = grid[si][sj];
+    been[si][sj] = 1;
+    if (si < 0 || si > N - 1 || sj < 0 || sj > 9)
+        return;
+    for (int i = 0; i < 4; i++)
+    {
+        xi = si + dir[i][0];
+        xj = sj + dir[i][1];
+        if (grid[xi][xj] == temp && been[xi][xj] == 0)
+        {
+            enough++;
+            Dfs(xi, xj);
+        }
+    }
+    if (enough >= K)
+        grid[si][sj] = 0;
+    else
+        grid[si][sj] = temp;
 }
 
 int main()
 {
-	ifstream fin;
-	fin.open("mooyomooyo.in");
-	fin >> N >> K;
+    ifstream fin;
+    fin.open("mooyomooyo.in");
+    fin >> N >> K;
 
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			fin >> grid[i][j];
-		}
-	}
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            fin >> grid[i][j];
+        }
+    }
 
-	//enough = 1;
-	//Dfs(5, 0);
+    // enough = 1;
+    // Dfs(5, 0);
 
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j < 10; j++)
-		{
-			cout << grid[i][j];
-		}
-		cout << endl;
-	}
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            cout << grid[i][j];
+        }
+        cout << endl;
+    }
 
-	return 0;
+    return 0;
 }

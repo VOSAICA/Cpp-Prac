@@ -9,7 +9,7 @@ struct cow
 
 int main()
 {
-    int k, n; //k:traing times, n: cows
+    int k, n; // k:traing times, n: cows
     int a[10][20];
     int temp[19];
     ifstream fin;

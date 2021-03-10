@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-void swap2(int *a, int *b)
+void swap2(int* a, int* b)
 {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-void swap3(int &a, int &b) //引用， 与取地址的&不同
+void swap3(int& a, int& b) // 引用， 与取地址的&不同
 {
     int temp = a;
     a = b;
@@ -18,7 +18,7 @@ void swap3(int &a, int &b) //引用， 与取地址的&不同
 int main()
 {
     int a = 1234;
-    int *p = &a;
+    int* p = &a;
 
     cout << p << endl;
     cout << *p << endl;
@@ -27,12 +27,12 @@ int main()
     cout << a << endl;
 
     string b = "asdf";
-    string *q = &b;
+    string* q = &b;
 
     cout << *q << endl;
 
     int c[3] = {0, 1, 2};
-    int *start = c;
+    int* start = c;
     cout << *start << endl;
     start = &c[1];
     cout << *start << endl;

@@ -4,10 +4,10 @@ using namespace std;
 struct node
 {
     int data;
-    node *next;
+    node* next;
 };
 
-node *create(int array[], int length)
+node* create(int array[], int length)
 {
     node *cur, *pre, *head;
     head = new node;
@@ -24,23 +24,23 @@ node *create(int array[], int length)
     return head;
 }
 
-void insert(node *head, int pos, int x)
+void insert(node* head, int pos, int x)
 {
-    node *cur = head;
+    node* cur = head;
     for (int i = 0; i < pos - 1; i++)
     {
         cur = cur->next;
     }
-    node *insertNode = new node;
+    node* insertNode = new node;
     insertNode->data = x;
     insertNode->next = cur->next;
     cur->next = insertNode;
 }
 
-void delPos(node *head, int pos)
+void delPos(node* head, int pos)
 {
-    node *cur = head;
-    node *del;
+    node* cur = head;
+    node* del;
     for (int i = 0; i < pos - 1; i++)
     {
         cur = cur->next;
@@ -58,9 +58,9 @@ int main()
         array[i] = i;
     }
     int length = sizeof(array) / sizeof(int);
-    node *head = create(array, 10);
+    node* head = create(array, 10);
 
-    node *point = head->next;
+    node* point = head->next;
     while (point != NULL)
     {
         cout << point->data << " ";

@@ -24,7 +24,7 @@ int main()
 
     for (int i = 0; i < 7; i++)
     {
-        //cout << first[i] << " " << last[i];
+        // cout << first[i] << " " << last[i];
         ans = max(ans, last[i] - first[i]);
     }
     cout << ans;

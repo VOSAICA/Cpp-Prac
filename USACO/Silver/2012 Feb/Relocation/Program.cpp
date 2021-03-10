@@ -6,7 +6,7 @@ using namespace std;
 int towns[1005][1005];
 
 int vis[1005], dis[1005];
-int N, M, K; //n个点，m条边
+int N, M, K; // n个点，m条边
 int markets[5];
 
 void Dijkstra(int u)

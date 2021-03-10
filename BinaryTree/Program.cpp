@@ -5,19 +5,19 @@ using namespace std;
 struct node
 {
     int data;
-    node *lchild;
-    node *rchild;
+    node* lchild;
+    node* rchild;
 };
 
-node *newNode(int v)
+node* newNode(int v)
 {
-    node *Node = new node;
+    node* Node = new node;
     Node->data = v;
     Node->lchild = Node->rchild = NULL;
     return Node;
 }
 
-void insert(node *&root, int x)
+void insert(node*& root, int x)
 {
     if (root == NULL)
     {
@@ -34,9 +34,9 @@ void insert(node *&root, int x)
     }
 }
 
-node *create(int data[], int n)
+node* create(int data[], int n)
 {
-    node *root = NULL;
+    node* root = NULL;
     for (int i = 0; i < n; i++)
     {
         insert(root, data[i]);
@@ -44,7 +44,7 @@ node *create(int data[], int n)
     return root;
 }
 
-void preorder(node *root)
+void preorder(node* root)
 {
     if (root == NULL)
     {
@@ -55,7 +55,7 @@ void preorder(node *root)
     preorder(root->rchild);
 }
 
-void inorder(node *root)
+void inorder(node* root)
 {
     if (root == NULL)
     {
@@ -66,7 +66,7 @@ void inorder(node *root)
     inorder(root->rchild);
 }
 
-void postorder(node *root)
+void postorder(node* root)
 {
     if (root == NULL)
     {
@@ -77,13 +77,13 @@ void postorder(node *root)
     cout << root->data << endl;
 }
 
-void layerorder(node *root)
+void layerorder(node* root)
 {
-    queue<node *> q;
+    queue<node*> q;
     q.push(root);
     while (!q.empty())
     {
-        node *now = q.front();
+        node* now = q.front();
         cout << now->data << endl;
         if (now->lchild != NULL)
         {
@@ -97,11 +97,11 @@ void layerorder(node *root)
     }
 }
 
-node *recreate(int preL, int preR, int inL, int inR, int pre[], int in[])
+node* recreate(int preL, int preR, int inL, int inR, int pre[], int in[])
 {
     if (preL > preR)
         return NULL;
-    node *root = new node;
+    node* root = new node;
     root->data = pre[preL];
     int k;
     for (k = inL; k <= inR; k++)
@@ -119,7 +119,7 @@ node *recreate(int preL, int preR, int inL, int inR, int pre[], int in[])
 int main()
 {
     int array[8] = {3, 4, 5, 1, 2, 7, 9, 0};
-    node *head = create(array, 8);
+    node* head = create(array, 8);
 
     preorder(head);
     cout << endl;
@@ -130,7 +130,7 @@ int main()
 
     int pre[8] = {3, 4, 1, 2, 5, 7, 0, 9};
     int in[8] = {1, 4, 2, 3, 0, 7, 5, 9};
-    node *head2 = recreate(0, 7, 0, 7, pre, in);
+    node* head2 = recreate(0, 7, 0, 7, pre, in);
     layerorder(head2);
     return 0;
 }

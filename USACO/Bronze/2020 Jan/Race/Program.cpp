@@ -1,5 +1,6 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
+
 using namespace std;
 long K, N;
 long a[1000];
@@ -26,7 +27,7 @@ long time_request(long x)
     long travel;
     long leftDis = 0;
 
-    time = terminalSpeed - speed; //b
+    time = terminalSpeed - speed; // b
     travel = sigma(speed, terminalSpeed);
 
     if (travel == K)
@@ -88,5 +89,6 @@ int main()
         else
             fout << time_request(a[i]) << endl;
     }
+
     return 0;
 }

@@ -19,7 +19,7 @@ int main()
     for (int i = 1; i < n + 1; i++)
     {
         char b[100];
-        for (int g = 1; (g < n - i + 1); g++) //start point
+        for (int g = 1; (g < n - i + 1); g++) // start point
         {
             for (int f = 0; f < i; f++)
             {
@@ -29,12 +29,12 @@ int main()
         }
 
         bool bigok = true;
-        for (int j = 1; (j < n - i + 1); j++) //start point
+        for (int j = 1; (j < n - i + 1); j++) // start point
         {
             int ok = 0;
             for (int x = j, y = 0; x <= j + i, y < i; x++, y++)
             {
-                //cout << "x: " << x << " " << " y: " << y << "     ";
+                // cout << "x: " << x << " " << " y: " << y << "     ";
                 if (a[x] == a[y])
                     ok += 1;
             }
