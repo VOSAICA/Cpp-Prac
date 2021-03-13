@@ -11,6 +11,5 @@ auto it4 = v2.cbegin(); // vector<int>::const_iterator
 
 int main()
 {
-
     return 0;
 }
