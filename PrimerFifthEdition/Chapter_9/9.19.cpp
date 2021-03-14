@@ -1,5 +1,5 @@
-#include <list>
 #include <iostream>
+#include <list>
 #include <string>
 
 using std::cin;
