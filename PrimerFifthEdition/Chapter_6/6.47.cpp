@@ -7,8 +7,8 @@ using std::vector;
 
 void print(const vector<int>& vec, vector<int>::size_type index)
 {
-#ifdef NDEBUG
-    std::clog << vec.size() << '\n';
+#ifndef NDEBUG
+    std::clog << "vec's size: " << vec.size() << '\n';
 #endif
     if (index == vec.size())
         return;

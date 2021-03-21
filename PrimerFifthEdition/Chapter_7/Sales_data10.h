@@ -30,28 +30,28 @@ public:
 
 Sales_data::Sales_data() : Sales_data("Default", 0, 0)
 {
-#ifdef NDEBUG
+#ifndef NDEBUG
     std::cout << "Default Constructor\n";
 #endif
 }
 
 Sales_data::Sales_data(const std::string& s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(p * n)
 {
-#ifdef NDEBUG
+#ifndef NDEBUG
     std::cout << "Sales_data(const std::string& s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(p * n)\n";
 #endif
 }
 
 Sales_data::Sales_data(const std::string s) : Sales_data(s, 0, 0)
 {
-#ifdef NDEBUG
+#ifndef NDEBUG
     std::cout << "Sales_data(const std::string s) : Sales_data(s, 0, 0)\n";
 #endif
 }
 
 Sales_data::Sales_data(std::istream& is)
 {
-#ifdef NDEBUG
+#ifndef NDEBUG
     std::cout << "istream Constructor\n";
 #endif
     read(is, *this);
