@@ -1,0 +1,47 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "g++ build active file",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-D",
+                "NDEBUG"
+            ],
+            "options": {},
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task generated for publish."
+        },
+        {
+            "type": "cppbuild",
+            "label": "g++ build active debug file",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            ],
+            "options": {},
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Task generated for Debugger."
+        }
+    ],
+    "version": "2.0.0"
+}
