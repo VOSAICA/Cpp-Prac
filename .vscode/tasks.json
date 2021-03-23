@@ -2,13 +2,14 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "g++ build active file",
+            "label": "Build active file",
             "command": "g++",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-Wall",
                 "-D",
                 "NDEBUG"
             ],
@@ -16,21 +17,20 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "detail": "Task generated for publish."
         },
         {
             "type": "cppbuild",
-            "label": "g++ build active debug file",
+            "label": "Build active debug file",
             "command": "g++",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-Wall",
+                "-D",
+                "_DEBUG"
             ],
             "options": {},
             "problemMatcher": [
@@ -40,7 +40,23 @@
                 "kind": "test",
                 "isDefault": true
             },
-            "detail": "Task generated for Debugger."
+            "detail": "Task generated for debug."
+        },
+        {
+            "type": "process",
+            "label": "Build then run",
+            "dependsOn": "Build active file",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "presentation": {
+                "focus": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ],
     "version": "2.0.0"
