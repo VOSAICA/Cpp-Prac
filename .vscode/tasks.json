@@ -17,7 +17,8 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "detail": "Task generated for publish."
+            "detail": "Task generated for publish.",
+            "group": "build"
         },
         {
             "type": "cppbuild",
