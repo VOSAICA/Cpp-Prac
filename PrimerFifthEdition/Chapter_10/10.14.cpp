@@ -4,8 +4,8 @@ using std::cout;
 
 int main()
 {
-    auto f = [](int a, int b) { return a + b; };
-    cout << f(1, 4);
+    auto sum = [](int a, int b) -> int { return a + b; };
+    cout << sum(1, 4);
 
     return 0;
 }
