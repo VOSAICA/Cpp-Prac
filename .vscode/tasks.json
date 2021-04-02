@@ -16,8 +16,8 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "detail": "Task generated for publish.",
-            "group": "build"
+            "group": "build",
+            "detail": "Task generated for publish"
         },
         {
             "type": "cppbuild",
@@ -40,13 +40,13 @@
                 "kind": "test",
                 "isDefault": true
             },
-            "detail": "Task generated for debug."
+            "detail": "Task generated for debug"
         },
         {
-            "type": "process",
-            "label": "Build then run",
+            "type": "shell",
+            "label": "Run active file",
             "dependsOn": "Build active file",
-            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}.exe",
             "presentation": {
                 "focus": true
             },
@@ -54,9 +54,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "detail": "Run after bulid the active file",
         }
     ],
     "version": "2.0.0"
