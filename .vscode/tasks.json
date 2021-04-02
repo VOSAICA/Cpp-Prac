@@ -13,7 +13,6 @@
                 "-D",
                 "NDEBUG"
             ],
-            "options": {},
             "problemMatcher": [
                 "$gcc"
             ],
