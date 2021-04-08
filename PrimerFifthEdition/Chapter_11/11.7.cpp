@@ -13,6 +13,7 @@ int main()
 {
     map<string, vector<string>> families;
     string kid, family;
+
     while (cin >> family)
     {
         if (cin >> kid)
