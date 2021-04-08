@@ -1,7 +1,9 @@
 #include "Sales_item.h"
 #include <iostream>
 #include <set>
+#include <string>
 
+using std::string;
 using std::cout;
 using std::multiset;
 
@@ -12,7 +14,7 @@ bool smallerIsbn(const Sales_item& lhs, const Sales_item& rhs)
 
 int main()
 {
-    multiset<Sales_item, bool(*)(const Sales_item&, const Sales_item&)> bookstore(compareIsbn);
+    multiset<Sales_item, bool(*)(const Sales_item&, const Sales_item&)> bookstore(smallerIsbn);
 
     bookstore.emplace("BBB");
     bookstore.emplace("MB");
@@ -21,7 +23,7 @@ int main()
     bookstore.emplace("BBB");
 
     cout << *bookstore.begin() << '\n';
-    cout << *--bookstore.end(); // 怎么好像是无序的？
+    cout << *--bookstore.end();
 
     return 0;
 }
