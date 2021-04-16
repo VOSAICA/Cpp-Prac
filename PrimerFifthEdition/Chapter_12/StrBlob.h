@@ -8,10 +8,12 @@
 
 class StrBlob;
 class StrBlobPtr;
+class ConstStrBlobPtr;
 
 class StrBlob
 {
     friend StrBlobPtr;
+    friend ConstStrBlobPtr;
 
 public:
     using size_type = std::vector<std::string>::size_type;
