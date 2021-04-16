@@ -13,4 +13,4 @@ int main()
 
     return 0;
 }
-// g++ 12.21.cpp StrBlob.cpp ConstStrBlob.cpp -o 12.21.exe
+// g++ 12.22.cpp StrBlob.cpp ConstStrBlob.cpp -o 12.22.exe
