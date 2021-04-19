@@ -1,4 +1,4 @@
-#include"ConstStrBlobPtr.h"
+#include "ConstStrBlobPtr.h"
 
 ConstStrBlobPtr::ConstStrBlobPtr() : curr(0)
 {
