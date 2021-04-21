@@ -44,6 +44,7 @@ public:
     StrBlobPtr(StrBlob& a, size_t sz = 0);
 
     bool operator!=(const StrBlobPtr& p);
+    StrBlobPtr operator+(const StrBlob::size_type& p);
     std::string& deref() const;
     StrBlobPtr& incr();
 

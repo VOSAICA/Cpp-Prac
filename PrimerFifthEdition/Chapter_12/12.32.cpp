@@ -1,4 +1,4 @@
-#include "TextQuery2.hpp"
+#include "TextQuery.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -30,3 +30,4 @@ int main()
 
     return 0;
 }
+// g++ 12.32.cpp StrBlob.cpp ConstStrBlobPtr.cpp TextQuery.cpp -o 12.32.exe

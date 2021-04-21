@@ -81,6 +81,13 @@ bool StrBlobPtr::operator!=(const StrBlobPtr& p)
     return p.curr != curr;
 }
 
+StrBlobPtr StrBlobPtr::operator+(const StrBlob::size_type& p)
+{
+    StrBlobPtr temp = *this;
+    temp.curr += p;
+    return temp;
+}
+
 std::string& StrBlobPtr::deref() const
 {
     auto p = check(curr, "dereference past end");
