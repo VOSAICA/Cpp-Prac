@@ -1,109 +1,81 @@
 #ifndef UNICODE
 #define UNICODE
-#define UNICODE_WAS_UNDEFINED
 #endif
 
 #include <Windows.h>
 
-#ifdef UNICODE_WAS_UNDEFINED
-#undef UNICODE
-#endif
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-HWND ghMainWnd = 0;
-
-bool InitWindowsApp(HINSTANCE instanceHandle, int show);
-
-int Run();
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, int nShowCmd)
+int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ PSTR pCmdLine, _In_ int nCmdShow)
 {
-    if (!InitWindowsApp(hInstance, nShowCmd))
-        return 0;
+    // Register the window class.
+    const wchar_t CLASS_NAME[] = L"Sample Window Class";
 
-    return Run();
-}
+    WNDCLASS wc = { };
 
-bool InitWindowsApp(HINSTANCE instanceHandle, int show)
-{
-    WNDCLASS wc;
-    wc.style = CS_HREDRAW | CS_VREDRAW;
-    wc.lpfnWndProc = WndProc;
-    wc.cbClsExtra = 0;
-    wc.cbWndExtra = 0;
-    wc.hInstance = instanceHandle;
-    wc.hIcon = LoadIcon(0, IDI_APPLICATION);
-    wc.hCursor = LoadCursor(0, IDC_ARROW);
-    wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
-    wc.lpszMenuName = 0;
-    wc.lpszClassName = L"BasicWndCLass";
+    wc.lpfnWndProc = WindowProc;
+    wc.hInstance = hInstance;
+    wc.lpszClassName = CLASS_NAME;
 
-    if (!RegisterClass(&wc))
+    RegisterClass(&wc);
+
+    // Create the window.
+
+    HWND hwnd = CreateWindowEx(
+        0,                              // Optional window styles.
+        CLASS_NAME,                     // Window class
+        L"Learn to Program Windows",    // Window text
+        WS_OVERLAPPEDWINDOW,            // Window style
+
+        // Size and position
+        CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+
+        NULL,       // Parent window
+        NULL,       // Menu
+        hInstance,  // Instance handle
+        NULL        // Additional application data
+    );
+
+    if (hwnd == NULL)
     {
-        MessageBox(0, L"RegisterClass FAILED", 0, 0);
-        return false;
+        return 0;
     }
 
-    ghMainWnd = CreateWindow(
-        L"BasicWndClass",
-        L"Win32Basic",
-        WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT,
-        CW_USEDEFAULT,
-        CW_USEDEFAULT,
-        CW_USEDEFAULT,
-        0,
-        0,
-        instanceHandle,
-        0);
+    ShowWindow(hwnd, nCmdShow);
 
-    if (ghMainWnd == 0)
+    // Run the message loop.
+
+    MSG msg = { };
+    while (GetMessage(&msg, NULL, 0, 0))
     {
-        MessageBox(0, L"CreateWindow FAILED", 0, 0);
-        return false;
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
     }
 
-    return true;
+    return 0;
 }
 
-int Run()
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    MSG msg = {0};
-    BOOL bRet = 1;
-    while ((bRet = GetMessage(&msg, 0, 0, 0)) != 0)
+    switch (uMsg)
     {
-        if (bRet == -1)
-        {
-            MessageBox(0, L"GetMessage FAILED", L"Error", MB_OK);
-            break;
-        }
-        else
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
-    }
-    return (int)msg.wParam;
-}
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-    switch (msg)
-    {
-    case WM_LBUTTONDOWN:
-        MessageBox(0, L"Hellom World", L"Hello", MB_OK);
-        return 0;
-    case WM_KEYDOWN:
-        if (wParam == VK_ESCAPE)
-            DestroyWindow(ghMainWnd);
-        return 0;
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
+
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hwnd, &ps);
+
+
+
+        FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
+
+        EndPaint(hwnd, &ps);
     }
+    return 0;
 
-    return DefWindowProc(hWnd, msg, wParam, lParam);
+    }
+    return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
-
-// 编译加上 -mwindows
