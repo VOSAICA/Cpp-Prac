@@ -51,7 +51,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
     while (GetMessage(&msg, NULL, 0, 0))
     {
         TranslateMessage(&msg);
-        DispatchMessage(&msg);
+        DispatchMessage(&msg); // Inside DispatchMessage, the operating system calls your window procedure
     }
 
     return 0;
@@ -64,15 +64,19 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
-
-    case WM_PAINT: {
+    case WM_CLOSE:
+        if (MessageBox(hwnd, L"Really quit?", L"My application", MB_OKCANCEL) == IDOK)
+        {
+            DestroyWindow(hwnd);
+        }
+        return 0;
+    case WM_PAINT:
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hwnd, &ps);
 
         FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
 
         EndPaint(hwnd, &ps);
-    }
         return 0;
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
