@@ -2,38 +2,33 @@
 
 using std::cout;
 
-size_t count = 0;
-
 struct Employee
 {
-    Employee() : id(++count)
+    static size_t idCount;
+
+    Employee() : id(++idCount)
     {
     }
 
-    Employee(Employee& orgi) : id(++count)
+    Employee(Employee& orgi) : id(++idCount)
     {
     }
 
     Employee& operator=(const Employee& rhs)
     {
-        id = ++count;
+        id = ++idCount;
         return *this;
     }
 
     int id;
 };
 
-void f(Employee& s)
-{
-    cout << s.id << '\n';
-}
+size_t Employee::idCount = 0;
 
 int main()
 {
     Employee a, b = a, c = b;
-    f(a);
-    f(b);
-    f(c);
 
     return 0;
 }
+// 理由与13.14，13.15，13.16相似
