@@ -9,7 +9,7 @@ struct HasPtr
     {
     }
 
-    HasPtr(HasPtr& orgi) : value(orgi.value), pStr(new std::string(*orgi.pStr))
+    HasPtr(const HasPtr& orgi) : value(orgi.value), pStr(new std::string(*orgi.pStr))
     {
     }
 

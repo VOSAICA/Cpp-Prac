@@ -10,7 +10,7 @@ struct Employee
     {
     }
 
-    Employee(Employee& orgi) : id(++idCount)
+    Employee(const Employee& orgi) : id(++idCount)
     {
     }
 
