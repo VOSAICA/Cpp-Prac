@@ -10,15 +10,19 @@ public:
     {
     }
 
-    HasPtr(const HasPtr& orgi) : i(orgi.i)
+    HasPtr(const HasPtr& orgi) : ps(new std::string(*orgi.ps)), i(orgi.i)
     {
-        ps = new std::string(*orgi.ps);
     }
 
     HasPtr& operator=(const HasPtr& rhs)
     {
-        *ps = *rhs.ps;
-        i = rhs.i;
+        if (this != &rhs)
+        {
+            std::string* temp_ps = new std::string(*rhs.ps);
+            delete ps;
+            ps = temp_ps;
+            i = rhs.i;
+        }
 
         return *this;
     }
