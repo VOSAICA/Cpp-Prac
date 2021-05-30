@@ -1,7 +1,7 @@
 #ifndef STR_BLOB_H
 #define STR_BLOB_H
 
-#include <exception>
+#include <stdexcept>
 #include <memory>
 #include <string>
 #include <vector>
