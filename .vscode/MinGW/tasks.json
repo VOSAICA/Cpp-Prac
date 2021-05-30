@@ -1,43 +1,46 @@
 {
-    "version": "2.0.0",
     "tasks": [
         {
-            "type": "shell",
-            "label": "Build for debug active file",
-            "command": "clang",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "--target=x86_64-pc-mingw64",
-                "-Wall",
-                "-fcolor-diagnostics",
-                "-std=c++17",
-                "-D",
-                "DEBUG"
-            ],
-            "group": "test",
-            "detail": "Task generated for debug"
-        },
-        {
-            "type": "shell",
+            "type": "cppbuild",
             "label": "Build active file",
-            "command": "clang",
+            "command": "g++",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
-                "--target=x86_64-pc-mingw64",
                 "-Wall",
-                "-fcolor-diagnostics",
-                "-std=c++17",
                 "-D",
                 "NDEBUG"
             ],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": "build",
             "detail": "Task generated for release"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build for debug active file",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-Wall",
+                "-D",
+                "_DEBUG"
+            ],
+            "options": {},
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Task generated for debug"
         },
         {
             "type": "shell",
@@ -53,5 +56,6 @@
             },
             "detail": "Run after bulid the active file"
         }
-    ]
+    ],
+    "version": "2.0.0"
 }

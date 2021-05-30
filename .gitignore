@@ -1,5 +1,3 @@
-.vscode/*
-!.vscode/launch.json
-!.vscode/tasks.json
-
 *.exe
+*.ilk
+*.pdb
