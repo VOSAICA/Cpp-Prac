@@ -131,7 +131,7 @@ SpacesInAngles: false
 SpacesInConditionalStatement: false
 SpacesInContainerLiterals: true
 SpacesInCStyleCastParentheses: false
-SpacesInLineCommentPrefix: Minimum = 13 Maximum = 1
+# SpacesInLineCommentPrefix: Minimum = 13 Maximum = 1
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 SpaceBeforeSquareBrackets: false
