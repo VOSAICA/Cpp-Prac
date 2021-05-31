@@ -53,7 +53,7 @@ int main()
     HasPtr a("asb"), b("back"), c("csp");
     vector<HasPtr> vec{c, a, b};
 
-    std::sort(vec.begin(), vec.end());
+    std::sort(vec.begin(), vec.end()); //傻逼
 
     return 0;
 }
