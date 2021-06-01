@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-Wall",
                 "-fcolor-diagnostics",
                 "-std=c++17",
@@ -17,7 +17,21 @@
                 "DEBUG"
             ],
             "group": "test",
-            "detail": "Task generated for debug"
+            "detail": "Task generated for debug",
+            "linux": {
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}.out",
+                    "-Wall",
+                    "-lstdc++",
+                    "-fcolor-diagnostics",
+                    "-std=c++17",
+                    "-D",
+                    "DEBUG"
+                ],
+            },
         },
         {
             "type": "shell",
@@ -35,7 +49,21 @@
                 "NDEBUG"
             ],
             "group": "build",
-            "detail": "Task generated for release"
+            "detail": "Task generated for release",
+            "linux":{
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}.out",
+                    "-Wall",
+                    "-lstdc++",
+                    "-fcolor-diagnostics",
+                    "-std=c++17",
+                    "-D",
+                    "NDEBUG"
+                ],
+            }
         },
         {
             "type": "shell",
@@ -49,7 +77,10 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Run after bulid the active file"
+            "detail": "Run after bulid the active file",
+            "linux":{
+                "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}.out",
+            }
         }
     ]
 }
