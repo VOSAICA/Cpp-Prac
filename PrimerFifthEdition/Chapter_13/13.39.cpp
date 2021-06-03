@@ -65,7 +65,7 @@ StrVec::~StrVec()
 void StrVec::push_back(const std::string& str)
 {
     chk_n_alloc();
-    alloc.construct(first_free++, str);
+    std::allocator_traits<std::allocator<std::string>>::construct(alloc, first_free++, str);
 }
 
 void StrVec::reserve(const size_t& newcapacity)
@@ -79,7 +79,7 @@ void StrVec::reserve(const size_t& newcapacity)
     auto elem = elements;
     for (size_t i = 0; i != size(); ++i)
     {
-        alloc.construct(dest++, std::move(*elem++));
+        std::allocator_traits<std::allocator<std::string>>::construct(alloc, dest++, std::move(*elem++));
     }
     free();
     elements = newdata;
@@ -94,14 +94,14 @@ void StrVec::resize(const size_t& newsize)
         reserve(newsize);
         for (size_t i = size(); i < newsize; i++)
         {
-            alloc.construct(first_free++);
+            std::allocator_traits<std::allocator<std::string>>::construct(alloc, first_free++, "");
         }
     }
     else if (newsize < size())
     {
         while (first_free != elements + newsize)
         {
-            alloc.destroy(--first_free);
+            std::allocator_traits<std::allocator<std::string>>::destroy(alloc, --first_free);
         }
     }
 }
@@ -148,7 +148,7 @@ void StrVec::free()
     {
         for (auto p = first_free; p != elements;)
         {
-            alloc.destroy(--p);
+            std::allocator_traits<std::allocator<std::string>>::destroy(alloc, --p);
         }
         alloc.deallocate(elements, cap - elements);
     }
@@ -162,7 +162,7 @@ void StrVec::reallocate()
     auto elem = elements;
     for (size_t i = 0; i != size(); ++i)
     {
-        alloc.construct(dest++, std::move(*elem++));
+        std::allocator_traits<std::allocator<std::string>>::construct(alloc, dest++, std::move(*elem++));
     }
     free();
     elements = newdata;
