@@ -1,22 +1,17 @@
-// +---+---+---+---+---+---+---+---+---+---+
-// | 0 | 1 | 2 | 3 | 4 |       未构造       |
-// +---+---+---+---+---+---+---+---+---+---+
-//   ^                   ^                   ^
-//   |                   |                   |
-//   elements            first_free          cap
-
+#include <algorithm>
 #include <iostream>
 #include <memory>
 #include <string>
 #include <utility>
 
-class StrVec
+class String
 {
 public:
-    StrVec();
-    StrVec(const StrVec& orgi);
-    StrVec& operator=(const StrVec& rhs);
-    ~StrVec();
+    String();
+    String(const String& orgi);
+    String(std::initializer_list<std::string> lst);
+    String& operator=(const String& rhs);
+    ~String();
 
     void push_back(const std::string& str);
     void reserve(const size_t& newcapacity);
@@ -37,18 +32,26 @@ private:
     std::string* cap;        // 指向数组尾后位置的指针
 };
 
-StrVec::StrVec() : elements(nullptr), first_free(nullptr), cap(nullptr)
+String::String() : elements(nullptr), first_free(nullptr), cap(nullptr)
 {
 }
 
-StrVec::StrVec(const StrVec& orgi)
+String::String(std::initializer_list<std::string> lst) : elements(nullptr), first_free(nullptr), cap(nullptr)
+{
+    for (const auto& str : lst)
+    {
+        this->push_back(str);
+    }
+}
+
+String::String(const String& orgi)
 {
     auto newdata = alloc_n_copy(orgi.begin(), orgi.end());
     elements = newdata.first;
     first_free = cap = newdata.second;
 }
 
-StrVec& StrVec::operator=(const StrVec& rhs)
+String& String::operator=(const String& rhs)
 {
     auto data = alloc_n_copy(rhs.begin(), rhs.end());
     free();
@@ -57,18 +60,18 @@ StrVec& StrVec::operator=(const StrVec& rhs)
     return *this;
 }
 
-StrVec::~StrVec()
+String::~String()
 {
     free();
 }
 
-void StrVec::push_back(const std::string& str)
+void String::push_back(const std::string& str)
 {
     chk_n_alloc();
     std::allocator_traits<std::allocator<std::string>>::construct(alloc, first_free++, str);
 }
 
-void StrVec::reserve(const size_t& newcapacity)
+void String::reserve(const size_t& newcapacity)
 {
     if (newcapacity <= capacity())
     {
@@ -87,7 +90,7 @@ void StrVec::reserve(const size_t& newcapacity)
     cap = elements + newcapacity;
 }
 
-void StrVec::resize(const size_t& newsize)
+void String::resize(const size_t& newsize)
 {
     if (newsize > size())
     {
@@ -106,29 +109,29 @@ void StrVec::resize(const size_t& newsize)
     }
 }
 
-size_t StrVec::size() const
+size_t String::size() const
 {
     return first_free - elements;
 }
 
-size_t StrVec::capacity() const
+size_t String::capacity() const
 {
     return cap - elements;
 }
 
-std::string* StrVec::begin() const
+std::string* String::begin() const
 {
     return elements;
 }
 
-std::string* StrVec::end() const
+std::string* String::end() const
 {
     return first_free;
 }
 
-std::allocator<std::string> StrVec::alloc;
+std::allocator<std::string> String::alloc;
 
-void StrVec::chk_n_alloc()
+void String::chk_n_alloc()
 {
     if (size() == capacity())
     {
@@ -136,25 +139,24 @@ void StrVec::chk_n_alloc()
     }
 }
 
-std::pair<std::string*, std::string*> StrVec::alloc_n_copy(const std::string* begin, const std::string* end)
+std::pair<std::string*, std::string*> String::alloc_n_copy(const std::string* begin, const std::string* end)
 {
     auto data = alloc.allocate(end - begin);
     return {data, std::uninitialized_copy(begin, end, data)};
 }
 
-void StrVec::free()
+void String::free()
 {
     if (elements)
     {
-        for (auto p = first_free; p != elements;)
-        {
-            std::allocator_traits<std::allocator<std::string>>::destroy(alloc, --p);
-        }
+        std::for_each(elements, first_free, [](std::string& s) {
+            std::allocator_traits<std::allocator<std::string>>::destroy(alloc, &s);
+        });
         alloc.deallocate(elements, cap - elements);
     }
 }
 
-void StrVec::reallocate()
+void String::reallocate()
 {
     auto newcapacity = size() ? 2 * size() : 1;
     auto newdata = alloc.allocate(newcapacity);
@@ -174,13 +176,7 @@ using std::cout;
 
 int main()
 {
-    StrVec a;
-    a.push_back("arst");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
+    String a{"a", "b", "c", "d", "e", "f", "g", "h"};
     a.reserve(13);
     a.resize(3);
 

@@ -1,20 +1,20 @@
 #include "StrBlob.h"
 
-StrBlob::StrBlob() : data(std::make_shared<std::vector<std::string>>())
+StrBlob::StrBlob() : data(std::make_shared<StrVec>())
 {
 }
 
-StrBlob::StrBlob(std::initializer_list<std::string> il) : data(std::make_shared<std::vector<std::string>>(il))
+StrBlob::StrBlob(std::initializer_list<std::string> il) : data(std::make_shared<StrVec>(il))
 {
 }
 
-StrBlob::StrBlob(const StrBlob& orgi) : data(std::make_shared<std::vector<std::string>>(*orgi.data))
+StrBlob::StrBlob(const StrBlob& orgi) : data(std::make_shared<StrVec>(*orgi.data))
 {
 }
 
 StrBlob StrBlob::operator=(const StrBlob& rhs)
 {
-    data = std::make_shared<std::vector<std::string>>(*rhs.data);
+    data = std::make_shared<StrVec>(*rhs.data);
     return *this;
 }
 
@@ -25,7 +25,7 @@ StrBlob::size_type StrBlob::size() const
 
 bool StrBlob::empty() const
 {
-    return data->empty();
+    return (data->size()) == 0;
 }
 
 void StrBlob::push_back(const std::string& t)
@@ -36,19 +36,19 @@ void StrBlob::push_back(const std::string& t)
 std::string& StrBlob::front()
 {
     check(0, "front on empty StrBlob");
-    return data->front();
+    return *data->begin();
 }
 
 std::string& StrBlob::back()
 {
     check(0, "back on empty StrBlob");
-    return data->back();
+    return *data->end();
 }
 
 void StrBlob::pop_back()
 {
     check(0, "pop_back on empty StrBlob");
-    data->pop_back();
+    data->resize(size() - 1);
 }
 
 void StrBlob::check(size_type i, const std::string& msg) const
@@ -76,7 +76,7 @@ StrBlobPtr::StrBlobPtr(StrBlob& a, size_t sz) : wptr(a.data), curr(sz)
 {
 }
 
-std::shared_ptr<std::vector<std::string>> StrBlobPtr::check(std::size_t i, const ::std::string& msg) const
+std::shared_ptr<StrVec> StrBlobPtr::check(std::size_t i, const ::std::string& msg) const
 {
     auto ret = wptr.lock();
     if (ret == nullptr)
@@ -101,7 +101,7 @@ StrBlobPtr StrBlobPtr::operator+(const StrBlob::size_type& p)
 std::string& StrBlobPtr::deref() const
 {
     auto p = check(curr, "dereference past end");
-    return (*p)[curr];
+    return *((*p).begin() + curr);
 }
 
 StrBlobPtr& StrBlobPtr::incr()

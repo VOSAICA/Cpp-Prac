@@ -1,8 +1,9 @@
 #ifndef STR_BLOB_H
 #define STR_BLOB_H
 
-#include <stdexcept>
+#include "StrVec.hpp"
 #include <memory>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -16,7 +17,7 @@ class StrBlob
     friend ConstStrBlobPtr;
 
 public:
-    using size_type = std::vector<std::string>::size_type;
+    using size_type = size_t;
     StrBlob();
     StrBlob(std::initializer_list<std::string> il);
     StrBlob(const StrBlob& orgi);
@@ -36,7 +37,7 @@ public:
     StrBlobPtr end();
 
 private:
-    std::shared_ptr<std::vector<std::string>> data;
+    std::shared_ptr<StrVec> data;
     void check(size_type i, const std::string& msg) const;
 };
 
@@ -52,8 +53,8 @@ public:
     StrBlobPtr& incr();
 
 private:
-    std::shared_ptr<std::vector<std::string>> check(std::size_t i, const std::string& msg) const;
-    std::weak_ptr<std::vector<std::string>> wptr;
+    std::shared_ptr<StrVec> check(std::size_t i, const std::string& msg) const;
+    std::weak_ptr<StrVec> wptr;
     std::size_t curr;
 };
 

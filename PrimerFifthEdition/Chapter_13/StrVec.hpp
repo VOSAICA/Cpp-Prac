@@ -1,9 +1,5 @@
-// +---+---+---+---+---+---+---+---+---+---+
-// | 0 | 1 | 2 | 3 | 4 |       未构造       |
-// +---+---+---+---+---+---+---+---+---+---+
-//   ^                   ^                   ^
-//   |                   |                   |
-//   elements            first_free          cap
+#ifndef STR_VEC_HPP
+#define STR_VEC_HPP
 
 #include <iostream>
 #include <memory>
@@ -15,6 +11,7 @@ class StrVec
 public:
     StrVec();
     StrVec(const StrVec& orgi);
+    StrVec(std::initializer_list<std::string> lst);
     StrVec& operator=(const StrVec& rhs);
     ~StrVec();
 
@@ -39,6 +36,14 @@ private:
 
 StrVec::StrVec() : elements(nullptr), first_free(nullptr), cap(nullptr)
 {
+}
+
+StrVec::StrVec(std::initializer_list<std::string> lst) : elements(nullptr), first_free(nullptr), cap(nullptr)
+{
+    for (const auto& str : lst)
+    {
+        this->push_back(str);
+    }
 }
 
 StrVec::StrVec(const StrVec& orgi)
@@ -170,33 +175,4 @@ void StrVec::reallocate()
     cap = elements + newcapacity;
 }
 
-using std::cout;
-
-int main()
-{
-    StrVec a;
-    a.push_back("arst");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.reserve(13);
-    a.resize(3);
-
-    cout << "a.capacity = " << a.capacity() << '\n';
-    for (auto& i : a)
-    {
-        cout << i << ' ';
-    }
-    cout << '\n';
-
-    a.resize(10);
-    for (auto& i : a)
-    {
-        cout << i << ' ';
-    }
-    cout << "end";
-
-    return 0;
-}
+#endif

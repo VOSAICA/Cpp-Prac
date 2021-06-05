@@ -15,6 +15,7 @@ class StrVec
 public:
     StrVec();
     StrVec(const StrVec& orgi);
+    StrVec(std::initializer_list<std::string> lst);
     StrVec& operator=(const StrVec& rhs);
     ~StrVec();
 
@@ -39,6 +40,14 @@ private:
 
 StrVec::StrVec() : elements(nullptr), first_free(nullptr), cap(nullptr)
 {
+}
+
+StrVec::StrVec(std::initializer_list<std::string> lst) : elements(nullptr), first_free(nullptr), cap(nullptr)
+{
+    for (const auto& str : lst)
+    {
+        this->push_back(str);
+    }
 }
 
 StrVec::StrVec(const StrVec& orgi)
@@ -174,13 +183,7 @@ using std::cout;
 
 int main()
 {
-    StrVec a;
-    a.push_back("arst");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
-    a.push_back("smsb");
+    StrVec a{"a", "b", "c", "d", "e", "f", "g", "h"};
     a.reserve(13);
     a.resize(3);
 
