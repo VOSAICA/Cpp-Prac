@@ -50,7 +50,7 @@
             ],
             "group": "build",
             "detail": "Task generated for release",
-            "linux":{
+            "linux": {
                 "args": [
                     "-g",
                     "${file}",
@@ -78,8 +78,8 @@
                 "isDefault": true
             },
             "detail": "Run after bulid the active file",
-            "linux":{
-                "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}.out",
+            "linux": {
+                "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}.out"
             }
         }
     ]
