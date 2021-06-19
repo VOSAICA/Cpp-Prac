@@ -18,7 +18,7 @@ private:
 public:
     Sales_data();
     Sales_data(const std::string& s, unsigned n, double p);
-    explicit Sales_data(const std::string s);
+    explicit Sales_data(const std::string& s);
     explicit Sales_data(std::istream& is);
 
     std::string isbn() const; // 常量成员函数，改变this指针，使其指向常量Sales_data对象
@@ -40,7 +40,7 @@ Sales_data::Sales_data(const std::string& s, unsigned n, double p) : bookNo(s), 
 #endif
 }
 
-Sales_data::Sales_data(const std::string s) : Sales_data(s, 0, 0)
+Sales_data::Sales_data(const std::string& s) : Sales_data(s, 0, 0)
 {
 #ifndef NDEBUG
     std::cout << "Sales_data(const std::string s) : Sales_data(s, 0, 0)\n";
