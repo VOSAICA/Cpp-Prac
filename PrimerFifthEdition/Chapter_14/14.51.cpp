@@ -11,7 +11,7 @@ void calc(LongDouble);
 int main()
 {
     double dval;
-    calc(dval); // dval到int，或者dval到LongDouble
+    calc(dval); // double到int，或者double到LongDouble
 
     return 0;
 }
