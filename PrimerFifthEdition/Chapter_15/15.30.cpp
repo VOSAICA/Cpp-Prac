@@ -27,6 +27,7 @@ public:
     Quote(Quote&& orgi) noexcept
     {
         bookNo = std::move(orgi.bookNo);
+        price = orgi.price;
     }
 
     Quote& operator=(const Quote& rhs)
