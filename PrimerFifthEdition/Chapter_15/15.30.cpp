@@ -61,6 +61,10 @@ public:
         return new Quote(std::move(*this));
     }
 
+    virtual ~Quote()
+    {
+    }
+
 private:
     std::string bookNo;
 
