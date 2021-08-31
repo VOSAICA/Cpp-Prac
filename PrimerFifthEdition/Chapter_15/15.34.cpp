@@ -27,7 +27,6 @@
 // WordQuery::rep()
 // WordQuery::rep()
 
-
 // (c)
 // q.eval()
 //
