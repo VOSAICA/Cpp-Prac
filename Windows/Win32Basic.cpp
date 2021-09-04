@@ -25,10 +25,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
     // Create the window.
 
-    HWND hwnd = CreateWindowEx(0,                        // Optional window styles.
-                               CLASS_NAME,               // Window class
+    HWND hwnd = CreateWindowEx(0,                          // Optional window styles.
+                               CLASS_NAME,                 // Window class
                                L"中文 English にほんご 😅", // Window text
-                               WS_OVERLAPPEDWINDOW,      // Window style
+                               WS_OVERLAPPEDWINDOW,        // Window style
 
                                // Size and position
                                CW_USEDEFAULT,
