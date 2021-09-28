@@ -117,7 +117,9 @@ private:
 template <typename T>
 class BlobPtr
 {
+    // clang-format off
     friend bool operator< <T>(const BlobPtr<T>& lhs, const BlobPtr<T>& rhs);
+    // clang-format on
 
 public:
     BlobPtr<T>() = default;
