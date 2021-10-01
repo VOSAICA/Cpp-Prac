@@ -15,7 +15,11 @@ int main()
     background_task f;
     std::thread my_thread(f);
 
-    my_thread.join();
+    if (my_thread.joinable())
+    {
+        my_thread.join(); //等待
+    }
+    // my_thread.detach(); // 不等待
 
     return 0;
 }
