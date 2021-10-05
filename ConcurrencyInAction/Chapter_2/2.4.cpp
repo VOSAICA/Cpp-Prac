@@ -38,7 +38,10 @@ T parallel_accumulate(Iterator first, Iterator last, T init)
     {
         Iterator block_end = block_start;
         std::advance(block_end, block_size);
-        threads[i] = std::thread(accumulate_block<Iterator, T>(), block_start, block_end, std::ref(results[i]));
+        threads[i] = std::thread(accumulate_block<Iterator, T>(),
+                                 block_start,
+                                 block_end,
+                                 std::ref(results[i])); // 这里results是对vector元素的引用，thread不返回accumulate的值
         block_start = block_end;
     }
 
