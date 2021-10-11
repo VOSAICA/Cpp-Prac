@@ -51,8 +51,8 @@ int main()
         {
             if (nodes[i].c != 0)
             {
-                if ((nodes[i].color == nodes[nodes[i].a].color) || (nodes[i].color == nodes[nodes[i].b].color) ||
-                    (nodes[i].color == nodes[nodes[i].c].color))
+                if ((nodes[i].color == nodes[nodes[i].a].color) || (nodes[i].color == nodes[nodes[i].b].color)
+                    || (nodes[i].color == nodes[nodes[i].c].color))
                     nodes[i].color = g;
             }
             else if (nodes[i].c == 0)

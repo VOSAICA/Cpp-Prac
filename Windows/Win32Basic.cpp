@@ -65,16 +65,16 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)
     {
-    case WM_DESTROY:
+    case WM_DESTROY :
         PostQuitMessage(0);
         return 0;
-    case WM_CLOSE:
+    case WM_CLOSE :
         if (MessageBox(hwnd, L"Really quit?", L"My application", MB_OKCANCEL) == IDOK)
         {
             DestroyWindow(hwnd);
         }
         return 0;
-    case WM_PAINT:
+    case WM_PAINT :
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hwnd, &ps);
 

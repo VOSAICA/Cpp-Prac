@@ -55,7 +55,6 @@ int* getLeftmost(int* list, int k)
 }
 int main()
 {
-
     cin >> n >> k;
     int* list = (int*)malloc(n * sizeof(int));
     for (int i = 0; i < n; i++)

@@ -8,7 +8,12 @@ int N, K;
 int si, sj;
 int grid[100][10];
 int been[100][10];
-int dir[4][2] = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+int dir[4][2] = {
+    { 0, -1},
+    { 0,  1},
+    { 1,  0},
+    {-1,  0}
+};
 int enough;
 
 void Dfs(int si, int sj)

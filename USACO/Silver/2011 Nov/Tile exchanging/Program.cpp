@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define MAX_M 10000
 #define MAX_N 10
-#define INF 1000000000
+#define INF   1000000000
 using namespace std;
 
 int N, M, A[MAX_M + 1], best[MAX_M + 1][MAX_M + 1];

@@ -83,9 +83,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#define GET_ARRAY_LEN(array, len)                                                                                              \
-    {                                                                                                                          \
-        len = (sizeof(array) / sizeof(array[0]));                                                                              \
+#define GET_ARRAY_LEN(array, len)                 \
+    {                                             \
+        len = (sizeof(array) / sizeof(array[0])); \
     }
 
 struct Edge
@@ -107,7 +107,6 @@ void dfs(int curr, int label, int minW)
 }
 bool valid(int minW)
 {
-
     fill(component, component + n, -1);
     int numcomps = 0;
     for (int i = 0; i < n; i++)
@@ -126,7 +125,6 @@ bool valid(int minW)
 }
 int main()
 {
-
     cin >> n >> m;
     loc = new int[n];
     component = new int[n];

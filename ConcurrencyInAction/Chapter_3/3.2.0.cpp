@@ -21,6 +21,5 @@ bool list_contains(int value)
 
 int main()
 {
-
     return 0;
 }

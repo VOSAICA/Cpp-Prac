@@ -29,6 +29,5 @@ std::mutex someMutex;
 
 int main()
 {
-
     return 0;
 }
