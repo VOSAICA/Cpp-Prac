@@ -1,6 +1,4 @@
 ---
-# General
-BasedOnStyle: Microsoft
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
 AlignArrayOfStructures: Left
@@ -23,7 +21,8 @@ AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: Yes
+AlwaysBreakTemplateDeclarations: "Yes"
+BasedOnStyle: Microsoft
 BinPackArguments: false
 BinPackParameters: false
 BitFieldColonSpacing: Both
@@ -45,11 +44,9 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyNamespace: true
   SplitEmptyRecord: true
-BreakAfterJavaFieldAnnotations: true
 BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Custom
 BreakBeforeConceptDeclarations: true
-BreakBeforeInheritanceComma: false # 找不到
 BreakBeforeTernaryOperators: false
 BreakConstructorInitializers: AfterColon
 BreakInheritanceList: AfterComma
@@ -116,16 +113,14 @@ TabWidth: 4
 UseCRLF: true
 UseTab: Never
 ---
-#Cpp
 IndentPPDirectives: None
 Language: Cpp
 Standard: Latest
 ---
-#Java
+BreakAfterJavaFieldAnnotations: true
 Language: Java
 SortJavaStaticImport: Before
 ---
-#JavaScript
-Language: JavaScript
 JavaScriptQuotes: Double
 JavaScriptWrapImports: true
+Language: JavaScript
