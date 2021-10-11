@@ -5,7 +5,12 @@ char map[9][9];
 int n, m, t;
 int di, dj;
 bool escape;
-int dir[4][2] = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+int dir[4][2] = {
+    { 0, -1},
+    { 0,  1},
+    { 1,  0},
+    {-1,  0}
+};
 
 void dfs(int si, int sj, int cnt)
 {

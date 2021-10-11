@@ -12,7 +12,6 @@ void Print(int a[], int l)
 
 void ShellSort(int a[], int l)
 {
-
     int pace = l / 2;
     while (pace >= 1)
     {

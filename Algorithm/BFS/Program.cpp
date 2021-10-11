@@ -14,7 +14,12 @@ char map[100][100];
 int mintime[100][100];
 int ax, ay;
 int l, h;
-int dir[4][2] = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+int dir[4][2] = {
+    {-1,  0},
+    { 1,  0},
+    { 0,  1},
+    { 0, -1}
+};
 
 int bfs(point s)
 {
