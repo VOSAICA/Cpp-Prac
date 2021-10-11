@@ -44,14 +44,9 @@ inline void swap(X& lhs, X& rhs)
     {
         return;
     }
-    /*
-    std::lock(lhs.m, rhs.m); // 先同时锁上
-    std::lock_guard lock_a(lhs.m, std::adopt_lock); // 分别创建lock_guard，用adopt_lock表示已经上锁
-    std::lock_guard lock_b(rhs.m, std::adopt_lock);
-    */
-
-    // C++17
-    std::scoped_lock guard(lhs.m, rhs.m);
+    std::unique_lock<std::mutex> lockA(lhs.m, std::defer_lock); // 用defer_lock表示构造时不上锁
+    std::unique_lock<std::mutex> lockB(rhs.m, std::defer_lock);
+    std::lock(lockA, lockB);
 
     swap(lhs.detail, rhs.detail);
 }
