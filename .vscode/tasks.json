@@ -22,7 +22,7 @@
                     "-g",
                     "${file}",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}",
+                    "${fileDirname}/${fileBasenameNoExtension}.exe",
                     "-Wall",
                     "-lstdc++",
                     "-fcolor-diagnostics",
@@ -52,7 +52,7 @@
                 "args": [
                     "${file}",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}",
+                    "${fileDirname}/${fileBasenameNoExtension}.exe",
                     "-O",
                     "-Wall",
                     "-lstdc++",
@@ -76,9 +76,6 @@
                 "isDefault": true
             },
             "detail": "Run after bulid the active file",
-            "linux": {
-                "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}"
-            }
         }
     ]
 }

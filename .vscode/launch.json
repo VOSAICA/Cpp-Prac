@@ -13,9 +13,6 @@
             "cwd": "${fileDirname}",
             "internalConsoleOptions": "neverOpen",
             "preLaunchTask": "Build for debug active file",
-            "linux": {
-                "program": "${fileDirname}/${fileBasenameNoExtension}"
-            }
         }
     ]
 }
