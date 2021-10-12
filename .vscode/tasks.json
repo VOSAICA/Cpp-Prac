@@ -55,7 +55,7 @@
                     "-fcolor-diagnostics",
                     "-lpthread",
                     "-O",
-                    "-o{fileDirname}/${fileBasenameNoExtension}.exe",
+                    "-o${fileDirname}/${fileBasenameNoExtension}.exe",
                     "-pedantic",
                     "-std=c++17",
                     "-stdlib=libc++",
