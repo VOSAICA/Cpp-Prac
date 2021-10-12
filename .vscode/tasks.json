@@ -19,6 +19,7 @@
             "group": "test",
             "detail": "Task generated for debug",
             "linux": {
+                "command": "clang++-13",
                 "args": [
                     "-g",
                     "${file}",
@@ -51,6 +52,7 @@
             "group": "build",
             "detail": "Task generated for release",
             "linux": {
+                "command": "clang++-13",
                 "args": [
                     "-g",
                     "${file}",
