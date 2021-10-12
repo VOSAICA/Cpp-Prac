@@ -14,7 +14,7 @@
             "internalConsoleOptions": "neverOpen",
             "preLaunchTask": "Build for debug active file",
             "linux": {
-                "program": "${fileDirname}/${fileBasenameNoExtension}.out"
+                "program": "${fileDirname}/${fileBasenameNoExtension}"
             }
         }
     ]

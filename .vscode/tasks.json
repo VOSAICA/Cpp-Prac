@@ -12,9 +12,7 @@
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-Wall",
                 "-fcolor-diagnostics",
-                "-std=c++17",
-                "-D",
-                "DEBUG"
+                "-std=c++17"
             ],
             "group": "test",
             "detail": "Task generated for debug",
@@ -24,13 +22,11 @@
                     "-g",
                     "${file}",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}.out",
+                    "${fileDirname}/${fileBasenameNoExtension}",
                     "-Wall",
                     "-lstdc++",
                     "-fcolor-diagnostics",
                     "-std=c++17",
-                    "-D",
-                    "DEBUG"
                 ],
             },
         },
@@ -39,10 +35,10 @@
             "label": "Build active file",
             "command": "clang++",
             "args": [
-                "-g",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-O",
                 "-Wall",
                 "-fcolor-diagnostics",
                 "-std=c++17",
@@ -54,10 +50,10 @@
             "linux": {
                 "command": "clang++-13",
                 "args": [
-                    "-g",
                     "${file}",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}.out",
+                    "${fileDirname}/${fileBasenameNoExtension}",
+                    "-O",
                     "-Wall",
                     "-lstdc++",
                     "-fcolor-diagnostics",
@@ -81,7 +77,7 @@
             },
             "detail": "Run after bulid the active file",
             "linux": {
-                "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}.out"
+                "command": "cd ${fileDirname}; ./${fileBasenameNoExtension}"
             }
         }
     ]
