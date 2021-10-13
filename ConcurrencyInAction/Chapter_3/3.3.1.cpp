@@ -1,12 +1,20 @@
+#include <iostream>
 #include <memory>
 #include <mutex>
 #include <thread>
 
 struct some_resource
 {
+    some_resource()
+    {
+        std::cout << "default initialization\n";
+    }
+
     void do_something()
     {
     }
+
+    int state{};
 };
 
 /*
@@ -48,5 +56,9 @@ some_resource& get_some_resource_instance()
 
 int main()
 {
+    ++get_some_resource_instance().state;
+    ++get_some_resource_instance().state;
+    std::cout << ++get_some_resource_instance().state;
+
     return 0;
 }
