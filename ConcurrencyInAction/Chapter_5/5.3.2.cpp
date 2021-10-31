@@ -1,6 +1,7 @@
 #include <iostream>
 
-void print(int a, int b) {
+void print(int a, int b)
+{
     std::cout << a << " " << b << std::endl;
 }
 
