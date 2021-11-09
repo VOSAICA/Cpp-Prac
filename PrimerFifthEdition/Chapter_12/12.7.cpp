@@ -30,7 +30,6 @@ void outputVec(shared_ptr<vector<int>> vec, ostream& ost)
 
 int main()
 {
-
     auto a = func();
     inputVec(a, cin);
     cin.clear();

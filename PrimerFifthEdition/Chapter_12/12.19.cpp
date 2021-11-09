@@ -1,4 +1,5 @@
 #include "StrBlob.h"
+
 #include <iostream>
 
 int main()

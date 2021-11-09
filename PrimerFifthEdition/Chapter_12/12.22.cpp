@@ -1,5 +1,6 @@
 #include "ConstStrBlobPtr.h"
 #include "StrBlob.h"
+
 #include <iostream>
 
 using std::cout;

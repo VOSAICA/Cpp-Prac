@@ -1,4 +1,5 @@
 #include "TextQuery2.hpp"
+
 #include <fstream>
 #include <iostream>
 #include <string>

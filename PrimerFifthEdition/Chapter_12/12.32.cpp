@@ -1,4 +1,5 @@
 #include "TextQuery.h"
+
 #include <fstream>
 #include <iostream>
 #include <string>

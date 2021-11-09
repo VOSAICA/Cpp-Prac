@@ -2,6 +2,7 @@
 #define TEXT_QUERY_H
 
 #include "StrBlob.h"
+
 #include <fstream>
 #include <iostream>
 #include <map>
@@ -30,8 +31,8 @@ class QueryResult
     friend std::ostream& print(std::ostream&, const QueryResult&);
 
 public:
-    QueryResult(std::string s, std::shared_ptr<std::set<TextQuery::line_no>> p, std::shared_ptr<StrBlob> f)
-        : sought(s), lines(p), file(f)
+    QueryResult(std::string s, std::shared_ptr<std::set<TextQuery::line_no>> p, std::shared_ptr<StrBlob> f) :
+        sought(s), lines(p), file(f)
     {
     }
 

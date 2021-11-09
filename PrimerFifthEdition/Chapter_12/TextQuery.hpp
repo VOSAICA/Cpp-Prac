@@ -33,8 +33,8 @@ private:
     std::shared_ptr<std::map<std::string, std::set<size_t>>> wordAndLine;
 };
 
-TextQuery::TextQuery(std::ifstream& ifs)
-    : file(new std::vector<std::string>), wordAndLine(new std::map<std::string, std::set<size_t>>)
+TextQuery::TextQuery(std::ifstream& ifs) :
+    file(new std::vector<std::string>), wordAndLine(new std::map<std::string, std::set<size_t>>)
 {
     std::string line;
     size_t lineNo(1);
