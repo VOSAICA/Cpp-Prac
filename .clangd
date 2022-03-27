@@ -1,2 +1,6 @@
 CompileFlags:
-  Add: [-pedantic, -std=c++17, -Wall]
+  Add: [
+    -pedantic,
+    -std=c++17,
+    -Wall
+  ]
