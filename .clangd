@@ -1,6 +1,12 @@
 CompileFlags:
-  Add: [
-    -pedantic,
-    -std=c++17,
-    -Wall
-  ]
+  Add: [-O, -pedantic, -std=c++17, -Wall]
+  CompilationDatabase: None
+
+Completion:
+  AllScopes: Yes
+
+Diagnostics:
+  UnusedIncludes: Strict
+
+Hover:
+  ShowAKA: Yes
